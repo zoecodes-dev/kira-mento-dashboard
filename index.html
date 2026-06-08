@@ -756,20 +756,53 @@ ul.tight li b { color:var(--text); font-weight:500; }
 
 <!-- W3 -->
 <div class="page" id="page-w3">
-  <h1 class="page-title">W3 — Verification + LangGraph 조립</h1>
+  <h1 class="page-title">W3 — Verification + LangGraph 조립 및 인프라 통합</h1>
   <p class="page-sub"><span class="status-badge status-wip">● 진행 중</span>&nbsp;&nbsp;<span style="font-size:12px;color:var(--text-muted);">6/2(월) – 6/8(일)</span></p>
   <div class="card">
-    <div class="card-label">주요 작업</div>
-    <div class="wk-sec">6/2~ — Bedrock 연결 + LangGraph 조립 (진행 중)</div>
-    <div class="person"><span class="nm">A (지혜)</span><div class="ll"><span>· StateGraph 조립 + Supervisor 라우팅 구현</span><span>· HITL <code class="k">interrupt()</code> 패턴 구현</span></div></div>
-    <div class="person"><span class="nm">B (은진)</span><div class="ll"><span>· Amazon Bedrock IAM Role (<code class="k">KIRA-EC2-Bedrock-Role</code>) EC2 연결 확정</span><span>· 의존성 버전 확정 — LangGraph 1.2.2 · langchain-aws 1.5.0 · boto3 1.42.42 · pydantic 2.10.6</span><span>· <code class="k">data_gateway_node</code> 스켈레톤 완성 (BatchState 수신 → <code class="k">stage_extraction</code> 전환)</span><span>· 프론트엔드 연결 또는 최종 수정 확정 예정</span></div></div>
-    <div class="person"><span class="nm">C (은지)</span><div class="ll"><span>· Compliance 노드 함수 골격 + pgvector RAG 검색 연동</span></div></div>
-    <div class="person"><span class="nm">D (영수)</span><div class="ll"><span>· Geo Audit 노드 함수 래핑 + PostGIS <code class="k">ST_DWithin</code> 실동작</span></div></div>
-    <div class="person"><span class="nm">E (차윤)</span><div class="ll"><span>· Verification 룰 엔진 (FEOC 실동작) + Risk Domain 깡통</span></div></div>
+    <div class="card-label">주요 작업 내역</div>
+    <div class="wk-sec">6/2~ — 개별 노드 통합 및 핵심 백엔드/인프라 실결합 수행</div>
+    <div class="person"><span class="nm">A (지혜)</span>
+      <div class="ll">
+        <span>· LangGraph StateGraph 뼈대 및 supervisor 라우팅 구축을 완료했습니다.</span>
+        <span>· 임시 노드들을 실제 에이전트 함수로 교체하여 워크플로우(Happy Path) 통합을 수행했습니다.</span>
+        <span>· 신뢰도 저하 및 이상 징후 발생 시 파이프라인 정지(interrupt) 및 재개(resume) 패턴을 설계했습니다.</span>
+      </div>
+    </div>
+    <div class="person"><span class="nm">B (은진)</span>
+      <div class="ll">
+        <span>· AWS Bedrock IAM 연동 및 EC2 사양 상향(t3.large), OIDC 기반 GitHub Actions 무포트 배포 환경을 구축했습니다.</span>
+        <span>· 로컬 임베딩을 Bedrock(cohere.embed-v4:0)으로 전환하고, S3 기반 비동기 파일 로더를 구현했습니다.</span>
+        <span>· data_gateway_node 연동 트러블슈팅 및 docker-compose 워커 블록 앵커 최적화를 완료했습니다.</span>
+      </div>
+    </div>
+    <div class="person"><span class="nm">C (은지)</span>
+      <div class="ll">
+        <span>· compliance_node 뼈대 및 목적지별(EU/US 등) 적용 규제 매핑 로직을 구현했습니다.</span>
+        <span>· 10대 규제에 대한 pgvector 임베딩 처리 및 Bedrock Cohere 기반 RAG 코사인 유사도 검색 함수를 추가했습니다.</span>
+        <span>· UFLPA·IRA 전용 LLM 실판정(judge) 로직을 적용하고 HITL 연동(needs_human_review)을 완료했습니다.</span>
+      </div>
+    </div>
+    <div class="person"><span class="nm">D (영수)</span>
+      <div class="ll">
+        <span>· PostGIS(ST_Within, ::geography)를 활용한 좌표-국가 불일치 검증 공간 연산 쿼리를 구현했습니다.</span>
+        <span>· geo_audit_node를 파이프라인에 결합하고, 리스크 감지 시 이벤트 브로드캐스팅 및 비동기 큐 동시 적재 아키텍처를 적용했습니다.</span>
+        <span>· 재귀 CTE(WITH RECURSIVE)를 통해 N차 공급망 종속 트리 조회 N+1 문제를 해결했습니다.</span>
+      </div>
+    </div>
+    <div class="person"><span class="nm">E (차윤)</span>
+      <div class="ll">
+        <span>· 예정된 일정에 맞추어 Verification 룰 엔진 및 Risk Domain 파트 로직을 구현했습니다.</span>
+      </div>
+    </div>
   </div>
   <div class="card">
     <div class="card-label">태그</div>
-    <span class="tag tag-blue">Bedrock EC2 연결 (B)</span><span class="tag tag-blue">LangGraph 조립 (A)</span><span class="tag tag-blue">Compliance RAG (C)</span><span class="tag tag-blue">Geo 노드 (D)</span><span class="tag tag-amber">HITL interrupt 핵심 목표</span>
+    <span class="tag tag-blue">LangGraph 통합 (A)</span>
+    <span class="tag tag-blue">인프라/CI·CD 고도화 (B)</span>
+    <span class="tag tag-blue">규제 RAG/실판정 (C)</span>
+    <span class="tag tag-blue">PostGIS/분산 처리 (D)</span>
+    <span class="tag tag-blue">룰 엔진 (E)</span>
+    <span class="tag tag-amber">HITL interrupt 핵심 목표 완수</span>
   </div>
   <div class="card">
     <div class="card-label">요일별 5인 작업 분배</div>
@@ -791,13 +824,13 @@ ul.tight li b { color:var(--text); font-weight:500; }
 <td style="padding:11px 7px;font-weight:500">지혜 A</td><td style="padding:11px 7px;color:var(--color-text-secondary)">graph 뼈대</td><td style="padding:11px 7px;color:var(--color-text-secondary)">supervisor 라우팅</td><td style="padding:11px 7px;color:var(--color-text-secondary)">HITL interrupt</td><td style="padding:11px 7px;color:var(--color-text-secondary)">재개 resume</td><td style="padding:11px 7px;color:var(--color-text-tertiary)" rowspan="5"><div style="display:flex;flex-direction:column;justify-content:center;height:100%"><span style="font-weight:500;color:var(--color-text-primary)">전원: 튜터 학습</span><span style="margin-top:4px">내 코드 전체 이해 점검</span><span style="margin-top:8px;font-weight:500;color:var(--color-text-primary)">은진: 통합 점검</span><span style="margin-top:4px">새 코드 없음</span></div></td>
 </tr>
 <tr style="border-bottom:1px solid var(--color-border-tertiary)">
-<td style="padding:11px 7px;font-weight:500">은진 B</td><td style="padding:11px 7px;color:var(--color-text-secondary)">문서노드 골격</td><td style="padding:11px 7px;color:var(--color-text-secondary)">실제 문서추출</td><td style="padding:11px 7px;color:var(--color-text-secondary)">graph 결합 + 통합</td><td style="padding:11px 7px;color:var(--color-text-secondary)">통합 디버깅</td>
+<td style="padding:11px 7px;font-weight:500">은진 B</td><td style="padding:11px 7px;color:var(--color-text-secondary)">S3/Bedrock 전환</td><td style="padding:11px 7px;color:var(--color-text-secondary)">data_gateway 통합</td><td style="padding:11px 7px;color:var(--color-text-secondary)">인프라 CI/CD 배포</td><td style="padding:11px 7px;color:var(--color-text-secondary)">통합 환경 검증</td>
 </tr>
 <tr style="border-bottom:1px solid var(--color-border-tertiary)">
-<td style="padding:11px 7px;font-weight:500">은지 C</td><td style="padding:11px 7px;color:var(--color-text-secondary)">RAG 연동</td><td style="padding:11px 7px;color:var(--color-text-secondary)">규제 판정 노드</td><td style="padding:11px 7px;color:var(--color-text-secondary)">confidence 산출</td><td style="padding:11px 7px;color:var(--color-text-secondary)">노드 결합</td>
+<td style="padding:11px 7px;font-weight:500">은지 C</td><td style="padding:11px 7px;color:var(--color-text-secondary)">목적지 규제 매핑</td><td style="padding:11px 7px;color:var(--color-text-secondary)">pgvector 임베딩</td><td style="padding:11px 7px;color:var(--color-text-secondary)">RAG 검색 연동</td><td style="padding:11px 7px;color:var(--color-text-secondary)">LLM 실판정 적용</td>
 </tr>
 <tr style="border-bottom:1px solid var(--color-border-tertiary)">
-<td style="padding:11px 7px;font-weight:500">영수 D</td><td style="padding:11px 7px;color:var(--color-text-secondary)">geo 노드 래핑</td><td style="padding:11px 7px;color:var(--color-text-secondary)">ST_DWithin 실동작</td><td style="padding:11px 7px;color:var(--color-text-secondary)">폴리곤 거리</td><td style="padding:11px 7px;color:var(--color-text-secondary)">노드 결합</td>
+<td style="padding:11px 7px;font-weight:500">영수 D</td><td style="padding:11px 7px;color:var(--color-text-secondary)">geo_audit 통합</td><td style="padding:11px 7px;color:var(--color-text-secondary)">PostGIS 공간 쿼리</td><td style="padding:11px 7px;color:var(--color-text-secondary)">재귀 CTE 구현</td><td style="padding:11px 7px;color:var(--color-text-secondary)">이벤트/큐 분산</td>
 </tr>
 <tr>
 <td style="padding:11px 7px;font-weight:500">차윤 E</td><td style="padding:11px 7px;color:var(--color-text-secondary)">Risk/DPP 도메인</td><td style="padding:11px 7px;color:var(--color-text-secondary)">FEOC 룰</td><td style="padding:11px 7px;color:var(--color-text-secondary)">노드 3개</td><td style="padding:11px 7px;color:var(--color-text-secondary)">결합 디버깅</td>
