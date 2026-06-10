@@ -962,162 +962,122 @@ ul.tight li b { color:var(--text); font-weight:500; }
 <div class="page" id="page-w4">
   <h1 class="page-title">W4 — 파이프라인 통합</h1>
   <p class="page-sub"><span class="status-badge status-wip">● 진행 중</span>&nbsp;&nbsp;<span style="font-size:12px;color:var(--text-muted);">6/8(월) – 6/14(일)</span></p>
-
+ 
   <div class="card" style="margin-bottom:12px;">
     <div class="card-label">주간 일정 구조</div>
-    <div class="summary-text">월·화 개별 작업 → <b>수(6/10) 전원 프론트엔드 화면 구조 합의</b>(작업 없음) → 목·금 개별 작업(4일). 금요일은 전원 튜터형 학습일. <b>공통 변경</b>: <code class="k">graph.py</code> 노드 래퍼(<code class="k">traced_graph_node</code>)에서 trace 제거 → 각자 노드 파일에 <code class="k">@trace_node</code> 직접 부착(이중 audit_trail 방지).</div>
+    <div class="summary-text">월(6/8) 은진이 사용자 액터 관점 프로세스를 직접 제작. 화(6/9) 멘토 확인 후 은진·지혜가 프론트엔드 프로세스 정의 완료. 수목(6/11~12) 해당 프로세스 기반으로 팀별 백엔드 작업 조정 및 진행. 금(6/13) 전원 튜터형 학습. <b>공통 변경</b>: <code class="k">graph.py</code> 노드 래퍼에서 trace 제거 → 각자 노드 파일에 <code class="k">@trace_node</code> 직접 부착.</div>
   </div>
-
-  <!-- 수요일 공통 -->
-  <div class="card" style="margin-bottom:12px; border-left: 3px solid var(--blue);">
-    <div class="card-label" style="color:var(--blue);">수(6/10) — 전원 프론트엔드 화면 구조 합의 (작업 없음)</div>
-    <div class="summary-text">은진이 월·화에 준비한 화면 구조안을 팀 전체가 함께 검토하고 확정. 이후 W4 프론트 작업의 기준선이 됨. 이 날은 코드 작업 없이 합의에만 집중.</div>
-  </div>
-
-  <!-- A 지혜 -->
+ 
   <div class="card" style="margin-bottom:12px;">
-    <div class="card-label">A · 지혜 — 통합 작업 큐 API + graph 정리 + HITL resume 접점</div>
-    <div class="wk-sec">월·화 — 통합 작업 큐 API (W5 당김)</div>
-    <div class="person"><span class="nm">핵심</span><div class="ll">
-      <span>· <code class="k">v_action_items</code> 뷰(이미 존재) 조회 — GET /actions?status=&amp;source_type= (SUB/DD/HITL 합산)</span>
-      <span>· GET /actions/mine — <code class="k">current_user.user_id</code> 기준 개인 미해결 작업 (My-Task 화면용)</span>
-      <span>· GET /audit/gap-analysis/{regulation_id} — 규제 개정 후 영향분석 결과</span>
-    </div></div>
-    <div class="wk-sec">목 — graph.py 정리 + HITL resume 접점</div>
-    <div class="person"><span class="nm">핵심</span><div class="ll">
-      <span>· <code class="k">data_gateway_graph_node</code> placeholder(우회로) 제거 → 은진 실노드(<code class="k">data_gateway_node</code>) 직접 등록</span>
-      <span>· 노드 래퍼 trace 로직 제거(각 노드 파일이 <code class="k">@trace_node</code> 자체 보유) — audit_trail 이중기록 해소</span>
-      <span>· HITL resume 접점: <code class="k">interrupt()</code> ↔ 차윤 <code class="k">POST /hitl/{batch_id}/resolve</code> resume 신호 연결(graph 쪽 자리만, hitl_reviews 처리는 차윤)</span>
-    </div></div>
-    <div style="margin-top:8px;">
-      <span class="tag tag-blue">v_action_items 조회</span>
-      <span class="tag tag-blue">graph placeholder 제거</span>
-      <span class="tag tag-blue">HITL resume 접점</span>
-    </div>
+    <div class="card-label">월화 작업 배분 (6/8~6/9)</div>
+    <table style="width:100%;border-collapse:collapse;font-size:12px;">
+      <thead>
+        <tr style="border-bottom:1.5px solid var(--border);">
+          <th style="text-align:left;padding:6px 8px;color:var(--text-faint);font-weight:500;width:10%">담당</th>
+          <th style="text-align:left;padding:6px 8px;color:var(--text-faint);font-weight:500;width:40%">작업</th>
+          <th style="text-align:left;padding:6px 8px;color:var(--text-faint);font-weight:500;">핵심 산출물</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="border-bottom:0.5px solid var(--border);background:var(--bg);">
+          <td style="padding:6px 8px;font-weight:600;color:var(--text);">A 지혜</td>
+          <td style="padding:6px 8px;color:var(--text-muted);">통합 작업 큐 API (W5 당김) — <code class="k">v_action_items</code> 뷰 조회</td>
+          <td style="padding:6px 8px;color:var(--text-muted);"><code class="k">GET /actions</code> · <code class="k">/actions/mine</code> · <code class="k">/audit/gap-analysis</code></td>
+        </tr>
+        <tr style="border-bottom:0.5px solid var(--border);">
+          <td style="padding:6px 8px;font-weight:600;color:var(--text);">B 은진</td>
+          <td style="padding:6px 8px;color:var(--text-muted);">사용자 액터 관점 프론트 프로세스 직접 제작 → 화요일 멘토 확인 + 지혜와 프로세스 정의</td>
+          <td style="padding:6px 8px;color:var(--text-muted);">프론트엔드 프로세스 정의 완료</td>
+        </tr>
+        <tr style="border-bottom:0.5px solid var(--border);background:var(--bg);">
+          <td style="padding:6px 8px;font-weight:600;color:var(--text);">C 은지</td>
+          <td style="padding:6px 8px;color:var(--text-muted);">ORM schema 정합 (Customer·amperage_ah·production_from/to) + Ingest 확장</td>
+          <td style="padding:6px 8px;color:var(--text-muted);">BMW/Mercedes 2사 · 제품 4개 UPSERT</td>
+        </tr>
+        <tr style="border-bottom:0.5px solid var(--border);">
+          <td style="padding:6px 8px;font-weight:600;color:var(--text);">D 영수</td>
+          <td style="padding:6px 8px;color:var(--text-muted);">supply-chain router 확충 (기존 service 노출)</td>
+          <td style="padding:6px 8px;color:var(--text-muted);"><code class="k">/tree</code> · <code class="k">/alternatives</code> · <code class="k">/geo-risks</code></td>
+        </tr>
+        <tr>
+          <td style="padding:6px 8px;font-weight:600;color:var(--text);">E 차윤</td>
+          <td style="padding:6px 8px;color:var(--text-muted);">HITL 엔드포인트 신규 (현재 0개) — queue·resolve·approve/reject·context</td>
+          <td style="padding:6px 8px;color:var(--text-muted);">HITL 4 endpoints + <code class="k">hitl_reviews</code> 처리</td>
+        </tr>
+      </tbody>
+    </table>
   </div>
-
-  <!-- B 은진 -->
+ 
   <div class="card" style="margin-bottom:12px;">
-    <div class="card-label">B · 은진 — 프론트 구조안 준비 + document_parse_worker + PM 통합점검</div>
-    <div class="wk-sec">월·화 — 프론트 화면 구조안 준비 (수요일 합의용)</div>
-    <div class="person"><span class="nm">핵심</span><div class="ll">
-      <span>· 수요일 전원 합의에 쓸 프론트 화면 구조안을 직접 설계·다듬음 (LLM과 직접 진행, 가이드에 고정 작업 없음)</span>
-      <span>· W4 프론트 작업의 기준선 — 화면 목록·라우팅·컴포넌트 경계 정리</span>
-    </div></div>
-    <div class="wk-sec">목 — document_parse_worker 마무리</div>
-    <div class="person"><span class="nm">핵심</span><div class="ll">
-      <span>· 업로드 트리거 → <code class="k">document_parse_queue</code> enqueue → worker 소비 → parse → <code class="k">document_extraction_results</code> 적재</span>
-      <span>· <code class="k">@trace_tool("parse_document")</code> 파싱 단계 기록 / <code class="k">idempotency_key</code>로 중복 처리 방지</span>
-      <span>· 저신뢰 시 <code class="k">error_reason="low_confidence"</code> 신호(supervisor → supplier_reverify 분기)</span>
-    </div></div>
-    <div class="wk-sec">금 — PM 통합점검</div>
-    <div class="person"><span class="nm">핵심</span><div class="ll">
-      <span>· 계약 4종 재확인: <code class="k">import backend.</code> / 시그니처 / 언더스코어 상태값 / ORM=schema</span>
-      <span>· 4시나리오 부분흐름 점검: ① iX3 Happy / ② i4 Gray / ③ GLC Sad / ④ EQS Happy</span>
-      <span>· 각자 노드에 <code class="k">@trace_node</code> 직접 부착 여부 확인 (이중기록 없는지)</span>
-    </div></div>
-    <div style="margin-top:8px;">
-      <span class="tag tag-blue">프론트 구조안</span>
-      <span class="tag tag-blue">parse_worker</span>
-      <span class="tag tag-blue">PM 통합점검</span>
-    </div>
+    <div class="card-label">수목 작업 배분 (6/11~6/12)</div>
+    <div class="summary-text" style="margin-bottom:10px;">월·화에 정의한 사용자 액터 관점 프로세스를 기반으로 수·목 작업이 조정됨. 각 담당자 과제는 해당 프로세스의 액션 단위에 맞춰 재배분.</div>
+    <table style="width:100%;border-collapse:collapse;font-size:12px;">
+      <thead>
+        <tr style="border-bottom:1.5px solid var(--border);">
+          <th style="text-align:left;padding:6px 8px;color:var(--text-faint);font-weight:500;width:10%">담당</th>
+          <th style="text-align:left;padding:6px 8px;color:var(--text-faint);font-weight:500;width:22%">수(6/11)</th>
+          <th style="text-align:left;padding:6px 8px;color:var(--text-faint);font-weight:500;width:22%">목(6/12)</th>
+          <th style="text-align:left;padding:6px 8px;color:var(--text-faint);font-weight:500;">핵심 산출물</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="border-bottom:0.5px solid var(--border);background:var(--bg);">
+          <td style="padding:6px 8px;font-weight:600;color:var(--text);">A 지혜</td>
+          <td style="padding:6px 8px;color:var(--text-muted);">user/org 도메인 신설<br><span style="font-size:11px;color:var(--text-faint);">모델·repo·service·결재선 규칙</span></td>
+          <td style="padding:6px 8px;color:var(--text-muted);">report 결재 도메인<br>+ HITL resume 접점<br><span style="font-size:11px;color:var(--text-faint);">다단계 상태기계, 이벤트 라우팅</span></td>
+          <td style="padding:6px 8px;color:var(--text-muted);"><code class="k">GET /users/{id}</code><br><code class="k">GET /approval-chain</code><br><code class="k">POST /report</code> · 결재함</td>
+        </tr>
+        <tr style="border-bottom:0.5px solid var(--border);">
+          <td style="padding:6px 8px;font-weight:600;color:var(--text);">B 은진</td>
+          <td style="padding:6px 8px;color:var(--text-muted);">공통 인가 의존성<br><span style="font-size:11px;color:var(--text-faint);">JWT Bearer → CurrentUser(user_id, role)</span></td>
+          <td style="padding:6px 8px;color:var(--text-muted);">이벤트 LISTEN 루프<br>+ data_gateway 복구<br><span style="font-size:11px;color:var(--text-faint);">consume 구현, 노드 시그니처 정합</span></td>
+          <td style="padding:6px 8px;color:var(--text-muted);"><code class="k">get_current_user</code> / <code class="k">require_role</code><br>NOTIFY → handler 디스패치<br>실노드 통과 확인</td>
+        </tr>
+        <tr style="border-bottom:0.5px solid var(--border);background:var(--bg);">
+          <td style="padding:6px 8px;font-weight:600;color:var(--text);">C 은지</td>
+          <td style="padding:6px 8px;color:var(--text-muted);">HITL context(규제 근거)<br>+ FEOC 2단계 보강<br><span style="font-size:11px;color:var(--text-faint);">통제·관할 판정 축 추가</span></td>
+          <td style="padding:6px 8px;color:var(--text-muted);">탄소발자국·재활용 judge<br><span style="font-size:11px;color:var(--text-faint);">judge_carbon_footprint<br>judge_recycled_content</span></td>
+          <td style="padding:6px 8px;color:var(--text-muted);">FEOC 지분+통제 2단계<br>규제 판정 context 노출<br>탄소·재활용 <code class="k">@trace_tool</code></td>
+        </tr>
+        <tr style="border-bottom:0.5px solid var(--border);">
+          <td style="padding:6px 8px;font-weight:600;color:var(--text);">D 영수</td>
+          <td style="padding:6px 8px;color:var(--text-muted);">HITL context(지리)<br>+ 좌표 회색지대 노출<br><span style="font-size:11px;color:var(--text-faint);">factory_gps 조회 함수, 신장·불일치 표식</span></td>
+          <td style="padding:6px 8px;color:var(--text-muted);">협력사 통지·자진신고<br><span style="font-size:11px;color:var(--text-faint);">회사 경계(legal entity) 기준<br>공급원 변경 재검증 신호</span></td>
+          <td style="padding:6px 8px;color:var(--text-muted);">geo → HITL context 분담<br>회색지대 필드 추가<br>통지 도달 기록</td>
+        </tr>
+        <tr>
+          <td style="padding:6px 8px;font-weight:600;color:var(--text);">E 차윤</td>
+          <td style="padding:6px 8px;color:var(--text-muted);">HITL 승인자 기록<br>+ context 실데이터 채우기<br><span style="font-size:11px;color:var(--text-faint);">dummy_user_id 제거, compliance_history·evidence_urls</span></td>
+          <td style="padding:6px 8px;color:var(--text-muted);">DPP 발급 흐름 연결<br>+ 대외전송 양식(시작)<br><span style="font-size:11px;color:var(--text-faint);">승인→발급→QR, 고객사 양식 생성</span></td>
+          <td style="padding:6px 8px;color:var(--text-muted);"><code class="k">decided_by</code> 실 user_id 기록<br>context 4필드 실데이터<br>DPP + QR 흐름 완성</td>
+        </tr>
+      </tbody>
+    </table>
   </div>
-
-  <!-- C 은지 -->
-  <div class="card" style="margin-bottom:12px;">
-    <div class="card-label">C · 은지 — Product 도메인 재정렬 (고객사·암페어·BOM 버전)</div>
-    <div class="wk-sec">월 — ORM을 새 schema에 맞추기</div>
-    <div class="person"><span class="nm">핵심</span><div class="ll">
-      <span>· <code class="k">Customer</code> 모델 신설: <code class="k">customers</code> 테이블, <code class="k">source_system/external_id</code> ERP_PLM 패턴</span>
-      <span>· <code class="k">Product</code>에 컬럼 3개 추가: <code class="k">customer_id</code> / <code class="k">model_name</code> / <code class="k">amperage_ah</code>(단위: Ah)</span>
-      <span>· <code class="k">BomVersion</code> 컬럼 개명: <code class="k">effective_from/to</code> → <code class="k">production_from/to</code> (생산기간 의미)</span>
-    </div></div>
-    <div class="wk-sec">화 — Ingest 확장</div>
-    <div class="person"><span class="nm">핵심</span><div class="ll">
-      <span>· 고객사 get-or-create UPSERT(<code class="k">external_id</code> 기준) + 신규 시 <code class="k">CustomerImported</code> publish</span>
-      <span>· <code class="k">import_products</code>: customer UPSERT → product UPSERT(customer_id 참조) → <code class="k">ProductImported</code> 순서</span>
-      <span>· seed: BMW(iX3 108Ah / i4 81Ah) · Mercedes(GLC 94Ah / EQS 118Ah) 4개 제품</span>
-    </div></div>
-    <div class="wk-sec">목 — 고객사·기간별 조회/검색</div>
-    <div class="person"><span class="nm">핵심</span><div class="ll">
-      <span>· GET /products?customer_id=&amp;model_name=&amp;min_ah=&amp;max_ah= (고객사·암페어 필터)</span>
-      <span>· GET /products/{id}/bom-versions — <code class="k">production_from/to</code>·status, active 표시, 내림차순</span>
-      <span>· 차윤과 DPP payload 인터페이스 맞춤 (고객사·모델·암페어 포함)</span>
-    </div></div>
-    <div style="margin-top:8px;">
-      <span class="tag tag-blue">Customer 모델</span>
-      <span class="tag tag-blue">amperage_ah</span>
-      <span class="tag tag-blue">production_from/to</span>
-      <span class="tag tag-blue">BOM 버전 조회</span>
-    </div>
-  </div>
-
-  <!-- D 영수 -->
-  <div class="card" style="margin-bottom:12px;">
-    <div class="card-label">D · 영수 — 공급망 조회 router 확충 + EUDR + 본인 구간 시연 검증</div>
-    <div class="wk-sec">월·화 — 공급망 조회 router 확충 (기존 service 노출)</div>
-    <div class="person"><span class="nm">핵심</span><div class="ll">
-      <span>· GET /supply-chain/tree?product_id= — 기존 <code class="k">get_n_tier_supply_chain</code>(재귀CTE) 노출, <code class="k">hop_level</code> 포함</span>
-      <span>· GET /supply-chain/alternatives?part_id= — 기존 <code class="k">get_alternatives</code> 노출</span>
-      <span>· GET /supply-chain/geo-risks — <code class="k">check_geo_audit_risk_zone</code>(신장 ST_DWithin) + <code class="k">check_coordinate_authenticity</code> 결합</span>
-    </div></div>
-    <div class="wk-sec">목 — EUDR 검사 + ③ GLC Sad 본인 구간 검증</div>
-    <div class="person"><span class="nm">핵심</span><div class="ll">
-      <span>· <code class="k">check_eudr_deforestation</code> — 산림훼손 위험지역 좌표 판정 (신장 ST_DWithin 패턴 참고, 위험지역 데이터 없으면 PM 확인 후 ST_MakeEnvelope 임시 구성)</span>
-      <span>· ③ GLC Sad 검증: 신장 좌표(86.0, 41.0) 감지 → <code class="k">GeoRiskDetected</code> publish → <code class="k">risk_worker</code> → geo +30점 → 70↑ <code class="k">risk_escalated</code> → HITL 진입 확인</span>
-    </div></div>
-    <div style="margin-top:8px;">
-      <span class="tag tag-blue">supply-chain router</span>
-      <span class="tag tag-blue">EUDR deforestation</span>
-      <span class="tag tag-blue">GLC Sad 검증</span>
-    </div>
-  </div>
-
-  <!-- E 차윤 -->
-  <div class="card" style="margin-bottom:12px;">
-    <div class="card-label">E · 차윤 — HITL 본체 신규 + Haiku 요약 + Risk/Verification/DPP router 확충</div>
-    <div class="wk-sec">월·화 — HITL 엔드포인트 신규 (현재 0개)</div>
-    <div class="person"><span class="nm">핵심</span><div class="ll">
-      <span>· GET /hitl/queue?status=hitl_pending — 미처리 보류건 목록 + confidence_score</span>
-      <span>· POST /hitl/{batch_id}/resolve {resolution, decision_text} — <code class="k">hitl_resolved</code> 전이 + LangGraph resume 신호(지혜 graph가 수신)</span>
-      <span>· POST /hitl/{batch_id}/approve·reject — 승인/반려, reject 시 <code class="k">submission_rejected</code> 상태머신 통해 전이</span>
-      <span>· GET /hitl/{batch_id}/context — 컴플라이언스 이력 + 공장 GPS + 협력사 마스터 + 증빙 URL 단일 JSON</span>
-    </div></div>
-    <div class="wk-sec">목 — Haiku 요약 + router 확충</div>
-    <div class="person"><span class="nm">핵심</span><div class="ll">
-      <span>· Haiku HITL 요약: context 결과를 Haiku로 "이 건은 이래서 보류" 요약 (<code class="k">@trace_tool</code> / 요약만, 결정은 사람)</span>
-      <span>· GET /risk/scores?status=&amp;level= (리스크 목록·점수·등급) + GET /risk/{batch_id}</span>
-      <span>· GET /verification/{batch_id} (FEOC 결과), GET /dpp/records?customer_id= (발행 이력), GET /dpp/{id} (고객사·암페어 payload 포함)</span>
-      <span>· 은지와 DPP payload 인터페이스 맞춤 (customer_id·model_name·amperage_ah 반영)</span>
-    </div></div>
-    <div style="margin-top:8px;">
-      <span class="tag tag-blue">HITL 4 endpoints</span>
-      <span class="tag tag-blue">Haiku 요약</span>
-      <span class="tag tag-blue">risk/dpp router</span>
-    </div>
-  </div>
-
-  <!-- 주간 완료 체크 -->
+ 
   <div class="card">
     <div class="card-label">W4 완료 기준</div>
     <div class="summary-text">
-      <b>A(지혜)</b> /actions·/actions/mine·/audit/gap-analysis 조회 동작 + graph placeholder→실노드 + HITL resume 연결<br>
-      <b>B(은진)</b> 프론트 구조안(수 합의용) + parse_worker 업로드→파싱→적재 + PM 4시나리오 점검<br>
-      <b>C(은지)</b> Customer 모델 + Product 3컬럼 + BomVersion 개명 + Ingest UPSERT + 고객사·BOM 조회<br>
-      <b>D(영수)</b> supply-chain tree·alternatives·geo-risks router + EUDR + GLC Sad 본인 구간 통과<br>
-      <b>E(차윤)</b> HITL 4 endpoints + hitl_reviews 처리 + Haiku 요약 + risk/verification/dpp router 확충
+      <b>A(지혜)</b> /actions 조회 동작 + user/org 도메인 + report 결재 도메인 + HITL resume 연결<br>
+      <b>B(은진)</b> 공통 인가(JWT) + LISTEN 루프 consume 동작 + data_gateway 실노드 복구<br>
+      <b>C(은지)</b> ORM=schema 정합 + Ingest UPSERT + FEOC 2단계 + 탄소·재활용 judge<br>
+      <b>D(영수)</b> supply-chain router + geo HITL context 분담 + 협력사 통지·자진신고<br>
+      <b>E(차윤)</b> HITL 4 endpoints + decided_by 실기록 + context 실데이터 + DPP 발급 흐름
     </div>
-    <div style="margin-top:8px;">
-      <span class="tag tag-blue">프론트 구조 확정</span>
-      <span class="tag tag-blue">HITL 본체</span>
-      <span class="tag tag-blue">Product 재정렬</span>
-      <span class="tag tag-blue">공급망 router</span>
-      <span class="tag tag-blue">EUDR</span>
-      <span class="tag tag-blue">parse_worker</span>
+    <div style="margin-top:10px;display:flex;flex-wrap:wrap;gap:5px;">
+      <span class="tag tag-blue">공통 인가</span>
+      <span class="tag tag-blue">LISTEN 루프</span>
+      <span class="tag tag-blue">user/org</span>
+      <span class="tag tag-blue">report 결재</span>
+      <span class="tag tag-blue">HITL context 실데이터</span>
+      <span class="tag tag-blue">FEOC 2단계</span>
+      <span class="tag tag-blue">탄소·재활용 judge</span>
+      <span class="tag tag-blue">geo 회색지대</span>
+      <span class="tag tag-blue">협력사 통지</span>
+      <span class="tag tag-blue">DPP 발급</span>
     </div>
   </div>
 </div>
-
 <!-- W5 -->
 <div class="page" id="page-w5">
   <h1 class="page-title">W5 — 검증 &amp; 보완</h1>
