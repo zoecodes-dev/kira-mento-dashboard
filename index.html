@@ -390,8 +390,8 @@ ul.tight li b { color:var(--text); font-weight:500; }
     <button class="nav-item" onclick="showPage('w1', this)"><span class="dot dot-done"></span>W1 — 환경 가동<span class="dot-range">5/19–5/25</span></button>
     <button class="nav-item" onclick="showPage('w2', this)"><span class="dot dot-done"></span>W2 — 도메인 CRUD<span class="dot-range">5/26–6/1</span></button>
     <button class="nav-item" onclick="showPage('w3', this)"><span class="dot dot-done"></span>W3 — LangGraph 조립<span class="dot-range">6/2–6/8</span></button>
-    <button class="nav-item" onclick="showPage('w4', this)"><span class="dot dot-wip"></span>W4 — 파이프라인 통합<span class="dot-range">6/9–6/15</span></button>
-    <button class="nav-item" onclick="showPage('w5', this)"><span class="dot dot-todo"></span>W5 — 검증 &amp; 보완<span class="dot-range">6/16–6/22</span></button>
+    <button class="nav-item" onclick="showPage('w4', this)"><span class="dot dot-done"></span>W4 — 파이프라인 통합<span class="dot-range">6/8–6/14</span></button>
+    <button class="nav-item" onclick="showPage('w5', this)"><span class="dot dot-wip"></span>W5 — 검증 &amp; 보완<span class="dot-range">6/16–6/22</span></button>
     <button class="nav-item" onclick="showPage('w6', this)"><span class="dot dot-todo"></span>W6 — 보완점 점검<span class="dot-range">6/23–6/29</span></button>
   </nav>
   <div class="sidebar-links">
@@ -425,7 +425,7 @@ ul.tight li b { color:var(--text); font-weight:500; }
   <p class="page-sub">Battery EV Digital Product Passport · EU 공급망 컴플라이언스 인텔리전스 플랫폼 · 6주 스프린트 계획</p>
 
   <div class="stat-grid">
-    <div class="stat-card"><div class="stat-num">W4</div><div class="stat-label">현재 주차 (예정)</div></div>
+    <div class="stat-card"><div class="stat-num">W5</div><div class="stat-label">현재 주차 (예정)</div></div>
     <div class="stat-card"><div class="stat-num">5</div><div class="stat-label">팀원 · AI 에이전트</div></div>
     <div class="stat-card"><div class="stat-num">44</div><div class="stat-label">DB 테이블 (+2 뷰)</div></div>
   </div>
@@ -433,14 +433,14 @@ ul.tight li b { color:var(--text); font-weight:500; }
   <div class="card">
     <div class="card-label">6주 스프린트 진행률</div>
     <div class="progress-bar-wrap"><div class="progress-bar" style="width:42%"></div></div>
-    <div class="progress-label">사전 기획 (4/28~5/18) · W1 완료 (5/19~5/24) · W2 완료 (5/25~5/31) · W3 완료 (6/1~6/7) · W4 진행 중 (6/8~6/14) · W5–W6 예정</div>
+    <div class="progress-label">사전 기획 (4/28~5/18) · W1 완료 (5/19~5/24) · W2 완료 (5/25~5/31) · W3 완료 (6/1~6/7) · W4 완료 (6/8~6/14) · W5 진행 중 (6/15~6/21) · W6 예정</div>
     <hr class="divider">
     <div class="mini">
       <div style="text-align:center;"><div style="font-size:11px;font-weight:500;color:var(--green);margin-bottom:4px;">W1<br>5/19–24</div><div style="height:4px;background:var(--green);border-radius:99px;"></div></div>
       <div style="text-align:center;"><div style="font-size:11px;font-weight:500;color:var(--green);margin-bottom:4px;">W2<br>5/25–5/31</div><div style="height:4px;background:var(--green);border-radius:99px;"></div></div>
       <div style="text-align:center;"><div style="font-size:11px;font-weight:500;color:var(--green);margin-bottom:4px;">W3<br>6/1–6/7</div><div style="height:4px;background:var(--green);border-radius:99px;"></div></div>
-      <div style="text-align:center;"><div style="font-size:11px;font-weight:500;color:var(--amber);margin-bottom:4px;">W4<br>6/8–14</div><div style="height:4px;background:var(--amber);border-radius:99px;"></div></div>
-      <div style="text-align:center;"><div style="font-size:11px;font-weight:500;color:#ccc;margin-bottom:4px;">W5<br>6/15–21</div><div style="height:4px;background:#e0e0e0;border-radius:99px;"></div></div>
+      <div style="text-align:center;"><div style="font-size:11px;font-weight:500;color:var(--green);margin-bottom:4px;">W4<br>6/8–14</div><div style="height:4px;background:var(--green);border-radius:99px;"></div></div>
+      <div style="text-align:center;"><div style="font-size:11px;font-weight:500;color:var(--amber);margin-bottom:4px;">W5<br>6/15–21</div><div style="height:4px;background:var(--amber);border-radius:99px;"></div></div>
       <div style="text-align:center;"><div style="font-size:11px;font-weight:500;color:#ccc;margin-bottom:4px;">W6<br>6/22–28</div><div style="height:4px;background:#e0e0e0;border-radius:99px;"></div></div>
     </div>
   </div>
@@ -961,13 +961,84 @@ ul.tight li b { color:var(--text); font-weight:500; }
 <!-- W4 -->
 <div class="page" id="page-w4">
   <h1 class="page-title">W4 — 파이프라인 통합</h1>
-  <p class="page-sub"><span class="status-badge status-wip">● 진행 중</span>&nbsp;&nbsp;<span style="font-size:12px;color:var(--text-muted);">6/8(월) – 6/14(일)</span></p>
- 
+  <p class="page-sub"><span class="status-badge status-done">● 완료</span>&nbsp;&nbsp;<span style="font-size:12px;color:var(--text-muted);">6/8(월) – 6/14(일)</span></p>
+
+  <!-- 주간 구조 -->
   <div class="card" style="margin-bottom:12px;">
     <div class="card-label">주간 일정 구조</div>
     <div class="summary-text">월(6/8) 은진이 사용자 액터 관점 프로세스를 직접 제작. 화(6/9) 멘토 확인 후 은진·지혜가 프론트엔드 프로세스 정의 완료. 수목(6/11~12) 해당 프로세스 기반으로 팀별 백엔드 작업 조정 및 진행. 금(6/13) 전원 튜터형 학습. <b>공통 변경</b>: <code class="k">graph.py</code> 노드 래퍼에서 trace 제거 → 각자 노드 파일에 <code class="k">@trace_node</code> 직접 부착.</div>
   </div>
- 
+
+  <!-- W4 실행 항목 완료 현황 -->
+  <div class="card" style="margin-bottom:12px;">
+    <div class="card-label">W4 실행 항목 완료 현황 (#01–#20)</div>
+    <div style="margin-bottom:12px;">
+      <div style="font-size:11px;color:var(--text-faint);margin-bottom:6px;">단계별 진행</div>
+      <!-- 단계 0 -->
+      <div style="margin-bottom:8px;">
+        <div style="font-size:11px;font-weight:500;color:var(--text-muted);margin-bottom:4px;">단계 0 — 서버 살리기</div>
+        <div style="display:flex;gap:4px;flex-wrap:wrap;">
+          <span style="display:inline-flex;align-items:center;gap:4px;font-size:11px;padding:3px 8px;border-radius:4px;background:var(--green-bg);color:var(--green);font-weight:500;">#01 지혜 audit/models</span>
+          <span style="display:inline-flex;align-items:center;gap:4px;font-size:11px;padding:3px 8px;border-radius:4px;background:var(--green-bg);color:var(--green);font-weight:500;">#02 차윤 risk/models</span>
+        </div>
+      </div>
+      <!-- 단계 1 -->
+      <div style="margin-bottom:8px;">
+        <div style="font-size:11px;font-weight:500;color:var(--text-muted);margin-bottom:4px;">단계 1 — 도메인 복구</div>
+        <div style="display:flex;gap:4px;flex-wrap:wrap;">
+          <span style="display:inline-flex;align-items:center;gap:4px;font-size:11px;padding:3px 8px;border-radius:4px;background:var(--green-bg);color:var(--green);font-weight:500;">#03 은진 supplier</span>
+          <span style="display:inline-flex;align-items:center;gap:4px;font-size:11px;padding:3px 8px;border-radius:4px;background:var(--green-bg);color:var(--green);font-weight:500;">#04 차윤 submission Enum</span>
+          <span style="display:inline-flex;align-items:center;gap:4px;font-size:11px;padding:3px 8px;border-radius:4px;background:var(--green-bg);color:var(--green);font-weight:500;">#05 지혜 supervisor</span>
+          <span style="display:inline-flex;align-items:center;gap:4px;font-size:11px;padding:3px 8px;border-radius:4px;background:var(--green-bg);color:var(--green);font-weight:500;">#06 은진 시드 결재선</span>
+          <span style="display:inline-flex;align-items:center;gap:4px;font-size:11px;padding:3px 8px;border-radius:4px;background:var(--green-bg);color:var(--green);font-weight:500;">#07 은진 시드 해시</span>
+        </div>
+      </div>
+      <!-- 단계 2 -->
+      <div style="margin-bottom:8px;">
+        <div style="font-size:11px;font-weight:500;color:var(--text-muted);margin-bottom:4px;">단계 2 — 로그인</div>
+        <div style="display:flex;gap:4px;flex-wrap:wrap;">
+          <span style="display:inline-flex;align-items:center;gap:4px;font-size:11px;padding:3px 8px;border-radius:4px;background:var(--green-bg);color:var(--green);font-weight:500;">#08 지혜 POST /auth/login</span>
+        </div>
+      </div>
+      <!-- 단계 3 -->
+      <div style="margin-bottom:8px;">
+        <div style="font-size:11px;font-weight:500;color:var(--text-muted);margin-bottom:4px;">단계 3 — P0-D 계약</div>
+        <div style="display:flex;gap:4px;flex-wrap:wrap;">
+          <span style="display:inline-flex;align-items:center;gap:4px;font-size:11px;padding:3px 8px;border-radius:4px;background:var(--green-bg);color:var(--green);font-weight:500;">#09 은진 data_gateway</span>
+          <span style="display:inline-flex;align-items:center;gap:4px;font-size:11px;padding:3px 8px;border-radius:4px;background:var(--amber-bg);color:var(--amber);font-weight:500;">#10 차윤 automation → W5</span>
+        </div>
+      </div>
+      <!-- 단계 4 -->
+      <div style="margin-bottom:8px;">
+        <div style="font-size:11px;font-weight:500;color:var(--text-muted);margin-bottom:4px;">단계 4 — HITL</div>
+        <div style="display:flex;gap:4px;flex-wrap:wrap;">
+          <span style="display:inline-flex;align-items:center;gap:4px;font-size:11px;padding:3px 8px;border-radius:4px;background:var(--amber-bg);color:var(--amber);font-weight:500;">#11 지혜 graph resume → W5</span>
+          <span style="display:inline-flex;align-items:center;gap:4px;font-size:11px;padding:3px 8px;border-radius:4px;background:var(--amber-bg);color:var(--amber);font-weight:500;">#12 차윤 hitl/service → W5</span>
+        </div>
+      </div>
+      <!-- 단계 5 -->
+      <div>
+        <div style="font-size:11px;font-weight:500;color:var(--text-muted);margin-bottom:4px;">단계 5 — 독립 항목</div>
+        <div style="display:flex;gap:4px;flex-wrap:wrap;">
+          <span style="display:inline-flex;align-items:center;gap:4px;font-size:11px;padding:3px 8px;border-radius:4px;background:var(--amber-bg);color:var(--amber);font-weight:500;">#13 차윤 dpp delivery → W5</span>
+          <span style="display:inline-flex;align-items:center;gap:4px;font-size:11px;padding:3px 8px;border-radius:4px;background:var(--amber-bg);color:var(--amber);font-weight:500;">#14 차윤 dpp TODO → W5</span>
+          <span style="display:inline-flex;align-items:center;gap:4px;font-size:11px;padding:3px 8px;border-radius:4px;background:var(--amber-bg);color:var(--amber);font-weight:500;">#15 차윤 feoc 인증 → W5</span>
+          <span style="display:inline-flex;align-items:center;gap:4px;font-size:11px;padding:3px 8px;border-radius:4px;background:var(--green-bg);color:var(--green);font-weight:500;">#16 영수 repo CTE/DTO</span>
+          <span style="display:inline-flex;align-items:center;gap:4px;font-size:11px;padding:3px 8px;border-radius:4px;background:var(--green-bg);color:var(--green);font-weight:500;">#17 영수 service 법인경계</span>
+          <span style="display:inline-flex;align-items:center;gap:4px;font-size:11px;padding:3px 8px;border-radius:4px;background:var(--green-bg);color:var(--green);font-weight:500;">#18 영수 router /tree</span>
+          <span style="display:inline-flex;align-items:center;gap:4px;font-size:11px;padding:3px 8px;border-radius:4px;background:var(--green-bg);color:var(--green);font-weight:500;">#19 은지 compliance stub</span>
+          <span style="display:inline-flex;align-items:center;gap:4px;font-size:11px;padding:3px 8px;border-radius:4px;background:var(--green-bg);color:var(--green);font-weight:500;">#20 은진 parse_worker</span>
+        </div>
+      </div>
+    </div>
+    <!-- 범례 -->
+    <div style="display:flex;gap:10px;margin-top:10px;padding-top:10px;border-top:0.5px solid var(--border);">
+      <span style="display:inline-flex;align-items:center;gap:4px;font-size:11px;color:var(--text-faint);"><span style="width:10px;height:10px;border-radius:2px;background:var(--green-bg);display:inline-block;border:1px solid var(--green);"></span>완료</span>
+      <span style="display:inline-flex;align-items:center;gap:4px;font-size:11px;color:var(--text-faint);"><span style="width:10px;height:10px;border-radius:2px;background:var(--amber-bg);display:inline-block;border:1px solid var(--amber);"></span>W5 이월</span>
+    </div>
+  </div>
+
+  <!-- 월화 -->
   <div class="card" style="margin-bottom:12px;">
     <div class="card-label">월화 작업 배분 (6/8~6/9)</div>
     <table style="width:100%;border-collapse:collapse;font-size:12px;">
@@ -999,7 +1070,7 @@ ul.tight li b { color:var(--text); font-weight:500; }
           <td style="padding:6px 8px;color:var(--text-muted);">supply-chain router 확충 (기존 service 노출)</td>
           <td style="padding:6px 8px;color:var(--text-muted);"><code class="k">/tree</code> · <code class="k">/alternatives</code> · <code class="k">/geo-risks</code></td>
         </tr>
-        <tr>
+        <tr style="background:var(--bg);">
           <td style="padding:6px 8px;font-weight:600;color:var(--text);">E 차윤</td>
           <td style="padding:6px 8px;color:var(--text-muted);">HITL 엔드포인트 신규 (현재 0개) — queue·resolve·approve/reject·context</td>
           <td style="padding:6px 8px;color:var(--text-muted);">HITL 4 endpoints + <code class="k">hitl_reviews</code> 처리</td>
@@ -1007,7 +1078,8 @@ ul.tight li b { color:var(--text); font-weight:500; }
       </tbody>
     </table>
   </div>
- 
+
+  <!-- 수목 -->
   <div class="card" style="margin-bottom:12px;">
     <div class="card-label">수목 작업 배분 (6/11~6/12)</div>
     <div class="summary-text" style="margin-bottom:10px;">월·화에 정의한 사용자 액터 관점 프로세스를 기반으로 수·목 작업이 조정됨. 각 담당자 과제는 해당 프로세스의 액션 단위에 맞춰 재배분.</div>
@@ -1045,7 +1117,7 @@ ul.tight li b { color:var(--text); font-weight:500; }
           <td style="padding:6px 8px;color:var(--text-muted);">협력사 통지·자진신고<br><span style="font-size:11px;color:var(--text-faint);">회사 경계(legal entity) 기준<br>공급원 변경 재검증 신호</span></td>
           <td style="padding:6px 8px;color:var(--text-muted);">geo → HITL context 분담<br>회색지대 필드 추가<br>통지 도달 기록</td>
         </tr>
-        <tr>
+        <tr style="background:var(--bg);">
           <td style="padding:6px 8px;font-weight:600;color:var(--text);">E 차윤</td>
           <td style="padding:6px 8px;color:var(--text-muted);">HITL 승인자 기록<br>+ context 실데이터 채우기<br><span style="font-size:11px;color:var(--text-faint);">dummy_user_id 제거, compliance_history·evidence_urls</span></td>
           <td style="padding:6px 8px;color:var(--text-muted);">DPP 발급 흐름 연결<br>+ 대외전송 양식(시작)<br><span style="font-size:11px;color:var(--text-faint);">승인→발급→QR, 고객사 양식 생성</span></td>
@@ -1054,41 +1126,327 @@ ul.tight li b { color:var(--text); font-weight:500; }
       </tbody>
     </table>
   </div>
- 
+
+  <!-- W4 완료 기준 -->
   <div class="card">
-    <div class="card-label">W4 완료 기준</div>
+    <div class="card-label">W4 완료 현황</div>
     <div class="summary-text">
-      <b>A(지혜)</b> /actions 조회 동작 + user/org 도메인 + report 결재 도메인 + HITL resume 연결<br>
-      <b>B(은진)</b> 공통 인가(JWT) + LISTEN 루프 consume 동작 + data_gateway 실노드 복구<br>
-      <b>C(은지)</b> ORM=schema 정합 + Ingest UPSERT + FEOC 2단계 + 탄소·재활용 judge<br>
-      <b>D(영수)</b> supply-chain router + geo HITL context 분담 + 협력사 통지·자진신고<br>
-      <b>E(차윤)</b> HITL 4 endpoints + decided_by 실기록 + context 실데이터 + DPP 발급 흐름
+      <b>A(지혜)</b> ✅ /actions 조회 · user/org · report 결재 도메인 · 로그인 · supervisor 복구<br>
+      <b>B(은진)</b> ✅ 공통 인가(JWT) · LISTEN 루프 · data_gateway 실노드 · supplier·시드 복구<br>
+      <b>C(은지)</b> ✅ ORM=schema 정합 · Ingest UPSERT · FEOC 2단계 · 탄소·재활용 judge · compliance stub<br>
+      <b>D(영수)</b> ✅ supply-chain router · geo HITL context · 협력사 통지·자진신고 · CTE/DTO · 법인경계<br>
+      <b>E(차윤)</b> ✅ HITL 4 endpoints · submission Enum · decided_by 실기록 · context 실데이터<br>
+      <b>→ W5 이월</b> 🟡 #10 FEOC 판정(Sad) · #11·#12 HITL 재개(Gray) · #13·#14 DPP 발급(Happy) · #15 인증
     </div>
     <div style="margin-top:10px;display:flex;flex-wrap:wrap;gap:5px;">
+      <span class="tag tag-blue">서버 기동</span>
+      <span class="tag tag-blue">로그인</span>
       <span class="tag tag-blue">공통 인가</span>
       <span class="tag tag-blue">LISTEN 루프</span>
-      <span class="tag tag-blue">user/org</span>
-      <span class="tag tag-blue">report 결재</span>
-      <span class="tag tag-blue">HITL context 실데이터</span>
+      <span class="tag tag-blue">data_gateway</span>
       <span class="tag tag-blue">FEOC 2단계</span>
-      <span class="tag tag-blue">탄소·재활용 judge</span>
-      <span class="tag tag-blue">geo 회색지대</span>
-      <span class="tag tag-blue">협력사 통지</span>
-      <span class="tag tag-blue">DPP 발급</span>
+      <span class="tag tag-blue">탄소·재활용</span>
+      <span class="tag tag-blue">geo HITL context</span>
+      <span style="background:var(--amber-bg);color:var(--amber);" class="tag">HITL 재개 → W5</span>
+      <span style="background:var(--amber-bg);color:var(--amber);" class="tag">DPP 발급 → W5</span>
     </div>
   </div>
 </div>
-<!-- W5 -->
+
 <div class="page" id="page-w5">
   <h1 class="page-title">W5 — 검증 &amp; 보완</h1>
-  <p class="page-sub"><span class="status-badge status-todo">○ 예정</span>&nbsp;&nbsp;<span style="font-size:12px;color:var(--text-muted);">6/15(월) – 6/21(일)</span></p>
+  <p class="page-sub"><span class="status-badge status-wip">● 진행 중</span>&nbsp;&nbsp;<span style="font-size:12px;color:var(--text-muted);">6/15(월) – 6/21(일)</span></p>
+
+  <!-- 전제 -->
+  <div class="card" style="margin-bottom:12px;">
+    <div class="card-label">전제 조건</div>
+    <div class="summary-text">W4 #01–#09 완료(서버 기동·로그인·data_gateway). 영수 PR(#16·#17·#18)·은지 PR(#19) 머지 대기 — 코드 완성, 1일차 선행 머지 필요. 차윤 #13·#14·#15 → 은진·지혜로 재배정. 배포: <b>프론트(Vercel) ↔ 백엔드(EC2 Docker)</b> 분리. 파이프라인 트리거: <b>PostgresSaver + ARQ 워커</b> 방식 확정.</div>
+  </div>
+
+  <!-- 의존 사슬 다이어그램 -->
+  <div class="card" style="margin-bottom:12px;">
+    <div class="card-label">전체 의존 사슬</div>
+    <div style="font-size:12px;color:var(--text-muted);margin-bottom:10px;">이 순서를 어기면 검증이 막힘</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;">
+      <div style="background:var(--blue-bg);border-radius:6px;padding:10px;">
+        <div style="font-size:11px;font-weight:600;color:var(--blue);margin-bottom:6px;">1일차</div>
+        <div style="font-size:11px;color:var(--text-muted);line-height:1.7;">머지: 영수·은지 PR<br>CORS 미들웨어<br>lib/api.ts 공통 래퍼<br>→ #10(차윤) 착수</div>
+      </div>
+      <div style="background:var(--amber-bg);border-radius:6px;padding:10px;">
+        <div style="font-size:11px;font-weight:600;color:var(--amber);margin-bottom:6px;">2일차</div>
+        <div style="font-size:11px;color:var(--text-muted);line-height:1.7;">#10 완주 검증<br>#11·#12 HITL 한 쌍<br>PostgresSaver 교체<br>트리거 본체(데모 심장)</div>
+      </div>
+      <div style="background:var(--green-bg);border-radius:6px;padding:10px;">
+        <div style="font-size:11px;font-weight:600;color:var(--green);margin-bottom:6px;">3일차</div>
+        <div style="font-size:11px;color:var(--text-muted);line-height:1.7;">백엔드 조회 API 완성<br>프론트 mock→API 교체<br>전원 자기 도메인 화면<br>최종 통합 검증</div>
+      </div>
+    </div>
+    <div style="margin-top:10px;padding:8px 10px;background:var(--bg);border-radius:4px;border-left:3px solid var(--color-text-danger);font-size:11px;color:var(--text-muted);line-height:1.7;">
+      <b style="color:var(--color-text-danger);">절대 순서 3가지</b><br>
+      ① #10(automation) → #11·#12(HITL)<br>
+      ② #11·#12 완주 → 블로커-1 트리거<br>
+      ③ CORS + lib/api → 프론트 교체
+    </div>
+  </div>
+
+  <!-- 1일차 -->
+  <div class="card" style="margin-bottom:12px;">
+    <div class="card-label">1일차 — 머지 + 독립 인프라 + 파이프라인 착수</div>
+    <table style="width:100%;border-collapse:collapse;font-size:12px;">
+      <thead>
+        <tr style="border-bottom:1.5px solid var(--border);">
+          <th style="text-align:left;padding:5px 8px;color:var(--text-faint);font-weight:500;width:8%">#</th>
+          <th style="text-align:left;padding:5px 8px;color:var(--text-faint);font-weight:500;width:10%">담당</th>
+          <th style="text-align:left;padding:5px 8px;color:var(--text-faint);font-weight:500;width:30%">작업</th>
+          <th style="text-align:left;padding:5px 8px;color:var(--text-faint);font-weight:500;">검증 조건</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="border-bottom:0.5px solid var(--border);background:var(--bg);">
+          <td style="padding:5px 8px;font-weight:600;color:var(--color-text-danger);">#01</td>
+          <td style="padding:5px 8px;color:var(--text-muted);">영수</td>
+          <td style="padding:5px 8px;color:var(--text-muted);">supplychain PR 머지 (#16·#17·#18)</td>
+          <td style="padding:5px 8px;color:var(--text-muted);"><code class="k">import backend.main</code> 통과, <code class="k">GET /supply-chain/tree?product_id=X</code> → 200, 파라미터 없이 → 422</td>
+        </tr>
+        <tr style="border-bottom:0.5px solid var(--border);">
+          <td style="padding:5px 8px;font-weight:600;color:var(--color-text-danger);">#02</td>
+          <td style="padding:5px 8px;color:var(--text-muted);">은지</td>
+          <td style="padding:5px 8px;color:var(--text-muted);">compliance PR 머지 (#19)</td>
+          <td style="padding:5px 8px;color:var(--text-muted);"><code class="k">§stub</code> 0건, CBAM reasoning 한국어, <code class="k">is_out_of_scope=true</code></td>
+        </tr>
+        <tr style="border-bottom:0.5px solid var(--border);background:var(--bg);">
+          <td style="padding:5px 8px;font-weight:600;color:var(--blue);">#03</td>
+          <td style="padding:5px 8px;color:var(--text-muted);">은진</td>
+          <td style="padding:5px 8px;color:var(--text-muted);">CORS 미들웨어 (main.py) — ALLOWED_ORIGINS 환경변수</td>
+          <td style="padding:5px 8px;color:var(--text-muted);">Vercel → 백엔드 CORS 에러 0, OPTIONS 200</td>
+        </tr>
+        <tr style="border-bottom:0.5px solid var(--border);">
+          <td style="padding:5px 8px;font-weight:600;color:var(--blue);">#04</td>
+          <td style="padding:5px 8px;color:var(--text-muted);">은진</td>
+          <td style="padding:5px 8px;color:var(--text-muted);">lib/api.ts 공통 fetch 래퍼 + 토큰 자동첨부 + snake→camel 어댑터</td>
+          <td style="padding:5px 8px;color:var(--text-muted);"><code class="k">listSuppliers()</code> 백엔드 200 수신</td>
+        </tr>
+        <tr style="background:var(--bg);">
+          <td style="padding:5px 8px;font-weight:600;color:var(--amber);">#05</td>
+          <td style="padding:5px 8px;color:var(--text-muted);">차윤</td>
+          <td style="padding:5px 8px;color:var(--text-muted);">automation.py — supplier_ids 소비, risk_profiles 직접 조회 (<b>W4 #10 이월</b>)</td>
+          <td style="padding:5px 8px;color:var(--text-muted);">iX3 verification 통과, GLC 28.5% <code class="k">feoc_passed=False</code></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- 2일차 -->
+  <div class="card" style="margin-bottom:12px;">
+    <div class="card-label">2일차 — HITL 완성 + 체크포인터 + 트리거 + 분산 항목</div>
+    <table style="width:100%;border-collapse:collapse;font-size:12px;">
+      <thead>
+        <tr style="border-bottom:1.5px solid var(--border);">
+          <th style="text-align:left;padding:5px 8px;color:var(--text-faint);font-weight:500;width:8%">#</th>
+          <th style="text-align:left;padding:5px 8px;color:var(--text-faint);font-weight:500;width:10%">담당</th>
+          <th style="text-align:left;padding:5px 8px;color:var(--text-faint);font-weight:500;width:30%">작업</th>
+          <th style="text-align:left;padding:5px 8px;color:var(--text-faint);font-weight:500;">검증 조건</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="border-bottom:0.5px solid var(--border);background:var(--bg);">
+          <td style="padding:5px 8px;font-weight:600;color:var(--amber);">#06</td>
+          <td style="padding:5px 8px;color:var(--text-muted);">지혜</td>
+          <td style="padding:5px 8px;color:var(--text-muted);">graph.py — resume_graph 폴백, placeholder 삭제 (<b>W4 #11 이월</b>)</td>
+          <td style="padding:5px 8px;color:var(--text-muted);">i4 approve → <code class="k">batch_hitl_wait</code> 벗어남</td>
+        </tr>
+        <tr style="border-bottom:0.5px solid var(--border);">
+          <td style="padding:5px 8px;font-weight:600;color:var(--amber);">#07</td>
+          <td style="padding:5px 8px;color:var(--text-muted);">차윤</td>
+          <td style="padding:5px 8px;color:var(--text-muted);">hitl/service.py — resume 이중발화 제거, reject→batch_rejected (<b>W4 #12 이월</b>)</td>
+          <td style="padding:5px 8px;color:var(--text-muted);">approve 후 arq hitl 키 미생성, GLC reject → <code class="k">batch_rejected</code></td>
+        </tr>
+        <tr style="border-bottom:0.5px solid var(--border);background:var(--bg);">
+          <td style="padding:5px 8px;font-weight:600;color:var(--color-text-danger);">#08</td>
+          <td style="padding:5px 8px;color:var(--text-muted);">지혜+은진</td>
+          <td style="padding:5px 8px;color:var(--text-muted);">PostgresSaver 교체 — <code class="k">InMemorySaver→AsyncPostgresSaver</code></td>
+          <td style="padding:5px 8px;color:var(--text-muted);">재시작 후 진행중 batch 상태 보존, HITL 재개 정상</td>
+        </tr>
+        <tr style="border-bottom:0.5px solid var(--border);">
+          <td style="padding:5px 8px;font-weight:600;color:var(--color-text-danger);">#09</td>
+          <td style="padding:5px 8px;color:var(--text-muted);">은진</td>
+          <td style="padding:5px 8px;color:var(--text-muted);"><code class="k">batch_pipeline_queue</code> 신설 + schema CHECK 제약 추가</td>
+          <td style="padding:5px 8px;color:var(--text-muted);">enqueue 허용, processed_jobs INSERT 통과</td>
+        </tr>
+        <tr style="border-bottom:0.5px solid var(--border);background:var(--bg);">
+          <td style="padding:5px 8px;font-weight:600;color:var(--color-text-danger);">#10</td>
+          <td style="padding:5px 8px;color:var(--text-muted);">차윤+지혜</td>
+          <td style="padding:5px 8px;color:var(--text-muted);">트리거 본체 — <code class="k">create_batch</code> + <code class="k">start_graph</code> + submit→enqueue 연결 <b>⭐데모 심장</b></td>
+          <td style="padding:5px 8px;color:var(--text-muted);">submit → batch 생성 → 파이프라인 자동 시작 → HITL 자동 도달</td>
+        </tr>
+        <tr style="border-bottom:0.5px solid var(--border);">
+          <td style="padding:5px 8px;font-weight:600;color:var(--blue);">#11</td>
+          <td style="padding:5px 8px;color:var(--text-muted);">은진 ←차윤</td>
+          <td style="padding:5px 8px;color:var(--text-muted);">verification/router.py — feoc-test 인증 추가 (<b>W4 #15 이월</b>)</td>
+          <td style="padding:5px 8px;color:var(--text-muted);">토큰 없이 → 401</td>
+        </tr>
+        <tr style="border-bottom:0.5px solid var(--border);background:var(--bg);">
+          <td style="padding:5px 8px;font-weight:600;color:var(--blue);">#12</td>
+          <td style="padding:5px 8px;color:var(--text-muted);">지혜 ←차윤</td>
+          <td style="padding:5px 8px;color:var(--text-muted);">dpp/service.py — payload "TODO" 45개 전부 None (<b>W4 #14 이월</b>)</td>
+          <td style="padding:5px 8px;color:var(--text-muted);">dpp_records payload "TODO" 0건</td>
+        </tr>
+        <tr style="border-bottom:0.5px solid var(--border);">
+          <td style="padding:5px 8px;font-weight:600;color:var(--blue);">#13</td>
+          <td style="padding:5px 8px;color:var(--text-muted);">차윤</td>
+          <td style="padding:5px 8px;color:var(--text-muted);">dpp delivery — DppDeliveryHistory → transmission_logs 재배선 (<b>W4 #13 이월</b>)</td>
+          <td style="padding:5px 8px;color:var(--text-muted);"><code class="k">POST /dpp/{id}/deliver</code> → 200, transmission_logs 1행</td>
+        </tr>
+        <tr style="border-bottom:0.5px solid var(--border);background:var(--bg);">
+          <td style="padding:5px 8px;font-weight:600;color:var(--blue);">#14</td>
+          <td style="padding:5px 8px;color:var(--text-muted);">은진</td>
+          <td style="padding:5px 8px;color:var(--text-muted);">document_parse_worker.py — TODO 주석 2줄 삭제</td>
+          <td style="padding:5px 8px;color:var(--text-muted);">주석 정리, 동작 무관</td>
+        </tr>
+        <tr>
+          <td style="padding:5px 8px;font-weight:600;color:var(--blue);">#14b</td>
+          <td style="padding:5px 8px;color:var(--text-muted);">은지</td>
+          <td style="padding:5px 8px;color:var(--text-muted);">RAG 임베딩 인덱싱 — regulations 10개 Cohere embed-v4 벡터화 → <code class="k">embedding_status='indexed'</code></td>
+          <td style="padding:5px 8px;color:var(--text-muted);">judge 5종 법조항 인용 반환, <code class="k">pending</code> 0건</td>
+        </tr>
+      </tbody>
+    </table>
+    <div style="margin-top:8px;padding:6px 10px;background:var(--bg);border-radius:4px;font-size:11px;color:var(--text-muted);">
+      🔴 #08·#09·#10 순서 고정: PostgresSaver → 큐 → 트리거. 이 셋이 데모 자동흐름의 심장.
+    </div>
+  </div>
+
+  <!-- 3일차 -->
+  <div class="card" style="margin-bottom:12px;">
+    <div class="card-label">3일차 — 조회 API 보강 + 프론트 mock→API 교체</div>
+    <table style="width:100%;border-collapse:collapse;font-size:12px;margin-bottom:10px;">
+      <thead>
+        <tr style="border-bottom:1.5px solid var(--border);">
+          <th style="text-align:left;padding:5px 8px;color:var(--text-faint);font-weight:500;width:8%">#</th>
+          <th style="text-align:left;padding:5px 8px;color:var(--text-faint);font-weight:500;width:10%">담당</th>
+          <th style="text-align:left;padding:5px 8px;color:var(--text-faint);font-weight:500;width:30%">작업</th>
+          <th style="text-align:left;padding:5px 8px;color:var(--text-faint);font-weight:500;">검증</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="border-bottom:0.5px solid var(--border);background:var(--bg);">
+          <td style="padding:5px 8px;font-weight:600;color:var(--blue);">#15</td>
+          <td style="padding:5px 8px;color:var(--text-muted);">지혜</td>
+          <td style="padding:5px 8px;color:var(--text-muted);">BE-1·2: <code class="k">GET /batches?status=processing</code> + <code class="k">GET /dashboard/kpis</code></td>
+          <td style="padding:5px 8px;color:var(--text-muted);">dashboard/queue 실데이터, AgentStage 매핑</td>
+        </tr>
+        <tr>
+          <td style="padding:5px 8px;font-weight:600;color:var(--blue);">#16</td>
+          <td style="padding:5px 8px;color:var(--text-muted);">은진</td>
+          <td style="padding:5px 8px;color:var(--text-muted);">BE-3: <code class="k">GET /suppliers/{id}/esg</code> · <code class="k">/training</code> · <code class="k">/reliability</code> (7탭 모달용)</td>
+          <td style="padding:5px 8px;color:var(--text-muted);">각 엔드포인트 200, 탭 데이터 채워짐</td>
+        </tr>
+      </tbody>
+    </table>
+    <div style="font-size:11px;color:var(--text-faint);margin-bottom:6px;">프론트 mock→API 교체 — 레이아웃·UI 변경 금지, 데이터 출처만 교체</div>
+    <table style="width:100%;border-collapse:collapse;font-size:12px;">
+      <thead>
+        <tr style="border-bottom:1.5px solid var(--border);">
+          <th style="text-align:left;padding:5px 8px;color:var(--text-faint);font-weight:500;width:8%">#</th>
+          <th style="text-align:left;padding:5px 8px;color:var(--text-faint);font-weight:500;width:10%">담당</th>
+          <th style="text-align:left;padding:5px 8px;color:var(--text-faint);font-weight:500;width:28%">화면</th>
+          <th style="text-align:left;padding:5px 8px;color:var(--text-faint);font-weight:500;">호출 엔드포인트</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="border-bottom:0.5px solid var(--border);background:var(--bg);">
+          <td style="padding:5px 8px;font-weight:600;color:var(--blue);">#17</td>
+          <td style="padding:5px 8px;color:var(--text-muted);">차윤</td>
+          <td style="padding:5px 8px;color:var(--text-muted);">portal·dpp·dpp/readiness·submission-status/review</td>
+          <td style="padding:5px 8px;color:var(--text-muted);"><code class="k">/data-requests/*</code> · <code class="k">/dpp/*</code></td>
+        </tr>
+        <tr style="border-bottom:0.5px solid var(--border);">
+          <td style="padding:5px 8px;font-weight:600;color:var(--blue);">#18</td>
+          <td style="padding:5px 8px;color:var(--text-muted);">은진</td>
+          <td style="padding:5px 8px;color:var(--text-muted);">suppliers·reliability·협력사 7탭모달·supplier 포털</td>
+          <td style="padding:5px 8px;color:var(--text-muted);"><code class="k">/suppliers/*</code></td>
+        </tr>
+        <tr style="border-bottom:0.5px solid var(--border);background:var(--bg);">
+          <td style="padding:5px 8px;font-weight:600;color:var(--blue);">#19</td>
+          <td style="padding:5px 8px;color:var(--text-muted);">은지</td>
+          <td style="padding:5px 8px;color:var(--text-muted);">materials/regulation-results · risk/high-risk</td>
+          <td style="padding:5px 8px;color:var(--text-muted);"><code class="k">/risk/*</code> · compliance 판정</td>
+        </tr>
+        <tr style="border-bottom:0.5px solid var(--border);">
+          <td style="padding:5px 8px;font-weight:600;color:var(--blue);">#20</td>
+          <td style="padding:5px 8px;color:var(--text-muted);">영수<br><span style="font-size:10px;color:var(--text-faint);">+은지서포트</span></td>
+          <td style="padding:5px 8px;color:var(--text-muted);">supply-chain/product-map·map·due-diligence·risk/origin-certs<br><span style="font-size:11px;color:var(--text-faint);">+ products·materials (은지서포트)</span></td>
+          <td style="padding:5px 8px;color:var(--text-muted);"><code class="k">/supply-chain/*</code> · <code class="k">/api/v1/products/*</code><br><span style="font-size:11px;color:var(--text-faint);">⚠ Leaflet SSR·[lat,lng] 주의. request-map(930줄) 후순위</span></td>
+        </tr>
+        <tr style="background:var(--bg);">
+          <td style="padding:5px 8px;font-weight:600;color:var(--blue);">#21</td>
+          <td style="padding:5px 8px;color:var(--text-muted);">지혜</td>
+          <td style="padding:5px 8px;color:var(--text-muted);">hitl·dashboard(+3탭)·audit·my-task·queue</td>
+          <td style="padding:5px 8px;color:var(--text-muted);"><code class="k">/hitl/*</code> · <code class="k">/batches</code> · <code class="k">/dashboard/kpis</code> · <code class="k">/audit/*</code></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- 담당자별 부하 -->
+  <div class="card" style="margin-bottom:12px;">
+    <div class="card-label">담당자별 부하</div>
+    <table style="width:100%;border-collapse:collapse;font-size:12px;">
+      <thead>
+        <tr style="border-bottom:1.5px solid var(--border);">
+          <th style="text-align:left;padding:5px 8px;color:var(--text-faint);font-weight:500;width:10%">담당</th>
+          <th style="text-align:left;padding:5px 8px;color:var(--text-faint);font-weight:500;width:30%">백엔드</th>
+          <th style="text-align:left;padding:5px 8px;color:var(--text-faint);font-weight:500;width:25%">프론트</th>
+          <th style="text-align:left;padding:5px 8px;color:var(--text-faint);font-weight:500;">비고</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="border-bottom:0.5px solid var(--border);background:var(--bg);">
+          <td style="padding:5px 8px;font-weight:600;color:var(--text);">차윤</td>
+          <td style="padding:5px 8px;color:var(--text-muted);">#05·#07·#10·#13</td>
+          <td style="padding:5px 8px;color:var(--text-muted);">#17</td>
+          <td style="padding:5px 8px;color:var(--text-muted);">분산 후 경감. 단 트리거(#10) 무거움</td>
+        </tr>
+        <tr style="border-bottom:0.5px solid var(--border);">
+          <td style="padding:5px 8px;font-weight:600;color:var(--text);">지혜</td>
+          <td style="padding:5px 8px;color:var(--text-muted);">#06·#08·#12·#15</td>
+          <td style="padding:5px 8px;color:var(--text-muted);">#21</td>
+          <td style="padding:5px 8px;color:var(--text-muted);">dpp TODO 받아 약간 증가</td>
+        </tr>
+        <tr style="border-bottom:0.5px solid var(--border);background:var(--bg);">
+          <td style="padding:5px 8px;font-weight:600;color:var(--text);">은진</td>
+          <td style="padding:5px 8px;color:var(--text-muted);">#03·#04·#09·#11·#14·#16</td>
+          <td style="padding:5px 8px;color:var(--text-muted);">#18</td>
+          <td style="padding:5px 8px;color:var(--text-muted);">인프라 집중 + 통합검증. 부하 최다</td>
+        </tr>
+        <tr style="border-bottom:0.5px solid var(--border);">
+          <td style="padding:5px 8px;font-weight:600;color:var(--text);">영수</td>
+          <td style="padding:5px 8px;color:var(--text-muted);">#01 (PR 머지)</td>
+          <td style="padding:5px 8px;color:var(--text-muted);">#20 (자기+은지서포트)</td>
+          <td style="padding:5px 8px;color:var(--text-muted);">공급망 맵 4,234줄이 W5 최대 부하. request-map 후순위</td>
+        </tr>
+        <tr style="background:var(--bg);">
+          <td style="padding:5px 8px;font-weight:600;color:var(--text);">은지</td>
+          <td style="padding:5px 8px;color:var(--text-muted);">#02 (PR 머지) + #14b RAG</td>
+          <td style="padding:5px 8px;color:var(--text-muted);">#19 (핵심 2개)</td>
+          <td style="padding:5px 8px;color:var(--text-muted);">RAG 인덱싱 없으면 judge 법조항 인용 불가 — 데모 직결</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- 최종 통합 검증 -->
   <div class="card">
-    <div class="card-label">예정 작업</div>
-    <div class="summary-text">전체 시스템 QA. 성능 튜닝 및 엣지케이스 처리. HTTPS 설정 (도메인 확보 후). 프론트엔드 완성도 향상. 최종 발표 준비 시작.</div>
-    <div>
-      <span class="tag tag-gray">QA</span>
-      <span class="tag tag-gray">성능 튜닝</span>
-      <span class="tag tag-gray">HTTPS</span>
+    <div class="card-label">최종 통합 검증 (은진, 전 항목 머지 후 1회)</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;font-size:12px;">
+      <div style="background:var(--bg);border-radius:4px;padding:8px;border-left:2px solid var(--green);">
+        <div style="font-weight:600;color:var(--green);margin-bottom:4px;font-size:11px;">파이프라인</div>
+        <div style="color:var(--text-muted);line-height:1.7;">① 시드 재적재(볼륨 와이프)<br>② submit → 파이프라인 자동 시작 → HITL 도달<br>③ 시나리오 1·4 → DPP issuance (TODO 0건)<br>④ 시나리오 2 → approve → 파이프라인 재개<br>⑤ 시나리오 3 → FEOC 28.5% 차단 → batch_rejected</div>
+      </div>
+      <div style="background:var(--bg);border-radius:4px;padding:8px;border-left:2px solid var(--blue);">
+        <div style="font-weight:600;color:var(--blue);margin-bottom:4px;font-size:11px;">인프라·품질</div>
+        <div style="color:var(--text-muted);line-height:1.7;">⑥ 서버 재시작 → 진행중 batch 상태 보존<br>⑦ Vercel → EC2 전 화면 실데이터 로드<br>⑧ <code class="k">GET /hitl/{batch}/context</code> → 실명+GPS<br>⑨ §stub 0건 + dpp TODO 0건</div>
+      </div>
     </div>
   </div>
 </div>
