@@ -1191,7 +1191,7 @@ ul.tight li b { color:var(--text); font-weight:500; }
   <!-- 주간 구조 -->
   <div class="card" style="margin-bottom:12px;">
     <div class="card-label">주간 일정 구조</div>
-    <div class="summary-text">월(6/8) 은진이 사용자 액터 관점 프로세스를 직접 제작. 화(6/9) 멘토 확인 후 은진·지혜가 프론트엔드 프로세스 정의 완료. 수목(6/11~12) 해당 프로세스 기반으로 팀별 백엔드 작업 조정 및 진행. 금(6/13) 전원 튜터형 학습. <b>공통 변경</b>: <code class="k">graph.py</code> 노드 래퍼에서 trace 제거 → 각자 노드 파일에 <code class="k">@trace_node</code> 직접 부착.</div>
+    <div class="summary-text">월(6/8) 은진이 사용자 액터 관점 프로세스를 직접 제작. 화(6/9) 멘토님 확인 후 은진·지혜가 프론트엔드 프로세스 정의 완료. 수목(6/11~12) 해당 프로세스 기반으로 팀별 백엔드 작업 조정 및 진행. 금(6/13) 전원 튜터형 학습. <b>공통 변경</b>: <code class="k">graph.py</code> 노드 래퍼에서 trace 제거 → 각자 노드 파일에 <code class="k">@trace_node</code> 직접 부착.</div>
   </div>
 
   <!-- W4 실행 항목 완료 현황 -->
@@ -1282,7 +1282,7 @@ ul.tight li b { color:var(--text); font-weight:500; }
         </tr>
         <tr style="border-bottom:0.5px solid var(--border);">
           <td style="padding:6px 8px;font-weight:600;color:var(--text);">B 은진</td>
-          <td style="padding:6px 8px;color:var(--text-muted);">사용자 액터 관점 프론트 프로세스 직접 제작 → 화요일 멘토 확인 + 지혜와 프로세스 정의</td>
+          <td style="padding:6px 8px;color:var(--text-muted);">사용자 액터 관점 프론트 프로세스 직접 제작 → 화요일 멘토님 확인 + 지혜와 프로세스 정의</td>
           <td style="padding:6px 8px;color:var(--text-muted);">프론트엔드 프로세스 정의 완료</td>
         </tr>
         <tr style="border-bottom:0.5px solid var(--border);background:var(--bg);">
@@ -1686,21 +1686,25 @@ ul.tight li b { color:var(--text); font-weight:500; }
     <div class="card-label">주간 일정 구조</div>
     <div class="summary-text">
       <b>메인 목표 :</b> 공급망 맵 생성 + DPP 발행 AI 에이전트 흐름을 end-to-end로 완성.<br>
-      월(6/22) 프로세스 추가 정의 완료. 화·수(6/23~24) Wave별 백엔드 구현. 목(6/26) 프론트엔드 코드 구현. 금(6/27) 추가 구현 or 데모 확인.
+      월(6/23) 프로세스 추가 정의 완료. 화·수(6/24~25) Wave별 백엔드 구현 — 수요일에 D2+D3 그래프 축소 시도 후 데모 안정성 위해 원복. 목(6/26) 프로세스 정의 회의. 금(6/27) 백엔드 API 구현 (도메인별 배분).
     </div>
   </div>
 
   <!-- 핵심 메인 -->
   <div class="card" style="margin-bottom:12px; border-left:3px solid var(--blue);">
-    <div class="card-label" style="color:var(--blue);">W6 핵심 — 공급망 맵 생성 + DPP 발행 AI 에이전트</div>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:4px;">
+    <div class="card-label" style="color:var(--blue);">W6 핵심 — 공급망 맵 생성 + DPP 발행 AI 에이전트 + 프론트 연동</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-top:4px;">
       <div style="background:var(--bg);border-radius:6px;padding:10px;border-left:2px solid var(--blue);">
         <div style="font-size:11px;font-weight:600;color:var(--blue);margin-bottom:5px;">① 공급망 맵 생성</div>
         <div style="font-size:12px;color:var(--text-muted);line-height:1.7;">협력사→협력사 초대 (G1)<br>맵 gap 계산 API (C2)<br>1클릭 데이터요청 트리거 (C3)<br>tier 표시·supplier_type 정합 (F1·F2)</div>
       </div>
       <div style="background:var(--bg);border-radius:6px;padding:10px;border-left:2px solid var(--green);">
         <div style="font-size:11px;font-weight:600;color:var(--green);margin-bottom:5px;">② DPP 발행 AI 에이전트</div>
-        <div style="font-size:12px;color:var(--text-muted);line-height:1.7;">배치생성+graph 트리거 (A1)<br>그래프 5노드 이하 축소 (D2+D3)<br>규제 임베딩 → RAG 판정 정상화 (B2)<br>체크포인터 Postgres 교체 (H1)</div>
+        <div style="font-size:12px;color:var(--text-muted);line-height:1.7;">배치생성+graph 트리거 (A1)<br><span style="color:var(--amber);">그래프 축소 시도 → 원복</span> (D2+D3)<br>규제 임베딩 → RAG 판정 정상화 (B2)<br>체크포인터 Postgres 교체 (H1)</div>
+      </div>
+      <div style="background:var(--bg);border-radius:6px;padding:10px;border-left:2px solid var(--amber);">
+        <div style="font-size:11px;font-weight:600;color:var(--amber);margin-bottom:5px;">③ 프론트 연동 (진행 중)</div>
+        <div style="font-size:12px;color:var(--text-muted);line-height:1.7;">백엔드 API 명세 확정<br>도메인별 엔드포인트 구현<br>mock → 실데이터 교체<br>인증·테넌트 격리 배선</div>
       </div>
     </div>
   </div>
@@ -1753,11 +1757,11 @@ ul.tight li b { color:var(--text); font-weight:500; }
           <td style="padding:5px 8px;color:var(--text-muted);">규제 카탈로그 dict compliance.py 잔존 0</td>
         </tr>
         <tr style="border-bottom:0.5px solid var(--border);">
-          <td style="padding:5px 8px;font-weight:600;color:var(--color-text-danger);">D2+D3 ⭐</td>
+          <td style="padding:5px 8px;font-weight:600;color:var(--text-muted);">D2+D3</td>
           <td style="padding:5px 8px;color:var(--text-muted);">지혜+차윤</td>
-          <td style="padding:5px 8px;"><span style="background:var(--color-background-danger);color:var(--color-text-danger);font-size:11px;padding:1px 5px;border-radius:3px;">M·동시머지</span></td>
-          <td style="padding:5px 8px;color:var(--text-muted);">그래프 9→5노드 축소. automation 4노드 결정론 후처리로 분리</td>
-          <td style="padding:5px 8px;color:var(--text-muted);">그래프 노드 5개 이하, 골든패스 통과</td>
+          <td style="padding:5px 8px;"><span style="background:var(--color-background-warning);color:var(--color-text-warning);font-size:11px;padding:1px 5px;border-radius:3px;">원복</span></td>
+          <td style="padding:5px 8px;color:var(--text-muted);">그래프 9→5노드 축소 <b style="color:var(--color-text-warning)">시도 후 원복</b> — 데모 안정성 위해 기존 구조 유지. 골든패스 검증은 완료.</td>
+          <td style="padding:5px 8px;color:var(--text-muted);">골든패스 통과 확인. 그래프 구조는 원상복원</td>
         </tr>
         <tr style="border-bottom:0.5px solid var(--border);background:var(--bg);">
           <td style="padding:5px 8px;font-weight:600;color:var(--blue);">G1</td>
@@ -1812,31 +1816,181 @@ ul.tight li b { color:var(--text); font-weight:500; }
     </table>
   </div>
 
-  <!-- 목·금 -->
+  <!-- 목 -->
   <div class="card" style="margin-bottom:12px;">
-    <div class="card-label">목(6/26) · 금(6/27) — 프론트엔드 구현 + 데모 확인</div>
-    <table style="width:100%;border-collapse:collapse;font-size:12px;">
-      <thead>
-        <tr style="border-bottom:1.5px solid var(--border);">
-          <th style="text-align:left;padding:5px 8px;color:var(--text-faint);font-weight:500;width:12%">일정</th>
-          <th style="text-align:left;padding:5px 8px;color:var(--text-faint);font-weight:500;width:12%">담당</th>
-          <th style="text-align:left;padding:5px 8px;color:var(--text-faint);font-weight:500;">내용</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr style="border-bottom:0.5px solid var(--border);background:var(--bg);">
-          <td style="padding:5px 8px;font-weight:600;color:var(--text);">목(6/26)</td>
-          <td style="padding:5px 8px;color:var(--text-muted);">전원</td>
-          <td style="padding:5px 8px;color:var(--text-muted);">프론트엔드 코드 구현 — 공급망 맵 화면 + DPP 발행 에이전트 흐름 화면. 백엔드 API 연결.</td>
-        </tr>
-        <tr style="background:var(--bg);">
-          <td style="padding:5px 8px;font-weight:600;color:var(--text);">금(6/27)</td>
-          <td style="padding:5px 8px;color:var(--text-muted);">전원</td>
-          <td style="padding:5px 8px;color:var(--text-muted);">추가 구현 or 데모 시나리오 확인 — 한양 정상(Happy) · 신장 차단(Sad) · 대성 저신뢰(Gray) 3종.</td>
-        </tr>
-      </tbody>
-    </table>
+    <div class="card-label">목(6/26) — 프로세스 정의 회의</div>
+    <div class="summary-text">팀 전체 프로세스 정의 회의 진행. 고객사 요청 자료 범위 확정.</div>
+    <div style="display:flex;flex-wrap:wrap;gap:4px;margin-top:8px;">
+      <span class="tag tag-blue">프로세스 정의 회의</span>
+    </div>
   </div>
+
+  <!-- 금 — 백엔드 API 구현 -->
+  <div class="card" style="margin-bottom:12px;">
+    <div class="card-label">금(6/27) — 백엔드 API 구현 (A→B→C→D→E)</div>
+    <div style="font-size:11px;color:var(--text-faint);margin-bottom:12px;">P1 = 연동 차단 해제 · P2 = 핵심 업무 · P3 = 고도화 &nbsp;|&nbsp; 🔵 기존 경로 고정 · 🟡 재합의 필요 · 🆕 신규 구현</div>
+
+    <!-- A 지혜 -->
+    <div style="border:0.5px solid var(--border);border-radius:8px;overflow:hidden;margin-bottom:10px;">
+      <div style="background:var(--bg);padding:8px 12px;display:flex;align-items:center;gap:10px;border-bottom:0.5px solid var(--border);">
+        <span style="font-size:13px;font-weight:700;color:var(--text);">A · 지혜</span>
+        <span style="font-size:11px;color:var(--text-faint);">audit · report · dpp · hitl</span>
+        <span style="margin-left:auto;font-size:11px;background:var(--color-background-secondary);color:var(--color-text-secondary);padding:1px 7px;border-radius:3px;">P2–P3</span>
+      </div>
+      <table style="width:100%;border-collapse:collapse;font-size:12px;">
+        <tbody>
+          <tr style="border-bottom:0.5px solid var(--border);background:var(--bg);">
+            <td style="padding:6px 12px;width:14%;font-weight:600;color:var(--text);">dpp</td>
+            <td style="padding:6px 12px;width:8%;"><span style="background:var(--color-background-info);color:var(--color-text-info);font-size:11px;padding:1px 5px;border-radius:3px;">P2</span></td>
+            <td style="padding:6px 12px;color:var(--text-muted);">🔵 <code class="k">/dpp/records</code> 필터 보강 · 🟡 <code class="k">/records/{dppId}</code> 단건 경로 확정 · 🔵 <code class="k">/products/{id}/readiness</code> · 🔵 <code class="k">/{id}/issue</code></td>
+          </tr>
+          <tr style="border-bottom:0.5px solid var(--border);">
+            <td style="padding:6px 12px;font-weight:600;color:var(--text);">dpp 센터 위젯</td>
+            <td style="padding:6px 12px;"><span style="background:var(--color-background-info);color:var(--color-text-info);font-size:11px;padding:1px 5px;border-radius:3px;">P2</span></td>
+            <td style="padding:6px 12px;color:var(--text-muted);">🆕 <code class="k">/dpp/status</code> · <code class="k">/held-products</code> · <code class="k">/blockers</code> · <code class="k">/carbon-footprint/trend</code> · <code class="k">/recycled-content/avg</code></td>
+          </tr>
+          <tr style="border-bottom:0.5px solid var(--border);background:var(--bg);">
+            <td style="padding:6px 12px;font-weight:600;color:var(--text);">hitl</td>
+            <td style="padding:6px 12px;"><span style="background:var(--color-background-info);color:var(--color-text-info);font-size:11px;padding:1px 5px;border-radius:3px;">P2</span></td>
+            <td style="padding:6px 12px;color:var(--text-muted);">🟡 경로 재합의 — 스펙 <code class="k">/hitl/review/{reviewId}</code> vs 기존 <code class="k">/hitl/{batch_id}/context·resolve</code>. 새로 만들지 말고 alias. decision → <code class="k">hitl.resolved</code> publish (graph resume 구독됨, 멱등성 가드 확인)</td>
+          </tr>
+          <tr style="border-bottom:0.5px solid var(--border);">
+            <td style="padding:6px 12px;font-weight:600;color:var(--text);">audit</td>
+            <td style="padding:6px 12px;"><span style="background:var(--color-background-secondary);color:var(--color-text-secondary);font-size:11px;padding:1px 5px;border-radius:3px;">P3</span></td>
+            <td style="padding:6px 12px;color:var(--text-muted);">🆕 <code class="k">GET /audit-packages</code> · <code class="k">/audit-packages/{id}</code>(checklist·hashChain 포함) · <code class="k">POST /{id}/export</code></td>
+          </tr>
+          <tr>
+            <td style="padding:6px 12px;font-weight:600;color:var(--text);">report</td>
+            <td style="padding:6px 12px;"><span style="background:var(--color-background-secondary);color:var(--color-text-secondary);font-size:11px;padding:1px 5px;border-radius:3px;">P3</span></td>
+            <td style="padding:6px 12px;color:var(--text-muted);">🆕 <code class="k">GET/POST /reports</code> · <code class="k">GET /reports/{id}</code> · <code class="k">PATCH /{id}/status</code> · 결재함 <code class="k">/inbox</code> · <code class="k">/{id}/approve·reject</code> — state_machine.py 결재 상태전이 준수</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- B 은진 -->
+    <div style="border:0.5px solid var(--border);border-radius:8px;overflow:hidden;margin-bottom:10px;">
+      <div style="background:var(--bg);padding:8px 12px;display:flex;align-items:center;gap:10px;border-bottom:0.5px solid var(--border);">
+        <span style="font-size:13px;font-weight:700;color:var(--text);">B · 은진</span>
+        <span style="font-size:11px;color:var(--text-faint);">공통 인프라 · supplier (전 묶음)</span>
+        <span style="margin-left:auto;font-size:11px;background:var(--green-bg);color:var(--green);padding:1px 7px;border-radius:3px;">supplier 선행 완료</span>
+      </div>
+      <table style="width:100%;border-collapse:collapse;font-size:12px;">
+        <tbody>
+          <tr style="border-bottom:0.5px solid var(--border);background:var(--bg);">
+            <td style="padding:6px 12px;width:14%;font-weight:600;color:var(--text);">P1-A</td>
+            <td style="padding:6px 12px;width:8%;"><span style="background:var(--color-background-danger);color:var(--color-text-danger);font-size:11px;padding:1px 5px;border-radius:3px;">P1</span></td>
+            <td style="padding:6px 12px;color:var(--text-muted);">기존 라우터 전수 인증·테넌트 격리 — <code class="k">Depends(get_current_user)</code> + <code class="k">tenant_id</code> 필터. 의존성 시그니처 B가 먼저 확정 후 나머지 도메인 병렬 적용</td>
+          </tr>
+          <tr style="border-bottom:0.5px solid var(--border);">
+            <td style="padding:6px 12px;font-weight:600;color:var(--text);">P1-B</td>
+            <td style="padding:6px 12px;"><span style="background:var(--color-background-danger);color:var(--color-text-danger);font-size:11px;padding:1px 5px;border-radius:3px;">P1</span></td>
+            <td style="padding:6px 12px;color:var(--text-muted);">목록 total → <code class="k">X-Total-Count</code> 헤더 (bare array 유지). /suppliers 우선, submissions·reports 공통 헬퍼로 확장</td>
+          </tr>
+          <tr style="border-bottom:0.5px solid var(--border);background:var(--bg);">
+            <td style="padding:6px 12px;font-weight:600;color:var(--text);">P1-C 🆕</td>
+            <td style="padding:6px 12px;"><span style="background:var(--color-background-danger);color:var(--color-text-danger);font-size:11px;padding:1px 5px;border-radius:3px;">P1</span></td>
+            <td style="padding:6px 12px;color:var(--text-muted);">파일 업로드 공유 모듈 — <code class="k">POST /files</code> · <code class="k">GET /files/{id}</code> · <code class="k">DELETE /files/{id}</code>. 50MB 가드. §12.2·§5.4·§13.2 multipart 화면 전부 의존</td>
+          </tr>
+          <tr style="border-bottom:0.5px solid var(--border);">
+            <td style="padding:6px 12px;font-weight:600;color:var(--text);">P1-D (auth)</td>
+            <td style="padding:6px 12px;"><span style="background:var(--color-background-danger);color:var(--color-text-danger);font-size:11px;padding:1px 5px;border-radius:3px;">P1</span></td>
+            <td style="padding:6px 12px;color:var(--text-muted);"><code class="k">POST /auth/login</code> · <code class="k">GET /auth/me</code> · <code class="k">POST /auth/logout</code> — 응답: token·role·userId·tenantId·supplierId·displayName. P1-A 토큰 발급원이므로 login 먼저</td>
+          </tr>
+          <tr style="border-bottom:0.5px solid var(--border);background:var(--bg);">
+            <td style="padding:6px 12px;font-weight:600;color:var(--text);">supplier ①<br><span style="font-size:10px;font-weight:400;">보강 조회</span></td>
+            <td style="padding:6px 12px;"><span style="background:var(--color-background-danger);color:var(--color-text-danger);font-size:11px;padding:1px 5px;border-radius:3px;">P1·P2</span></td>
+            <td style="padding:6px 12px;color:var(--text-muted);">🆕 <code class="k">/suppliers/{id}/completeness</code> · <code class="k">/data-collection</code> · <code class="k">/request-items (POST)</code> · <code class="k">/extended</code> · <code class="k">/contacts</code></td>
+          </tr>
+          <tr style="border-bottom:0.5px solid var(--border);">
+            <td style="padding:6px 12px;font-weight:600;color:var(--text);">supplier ②<br><span style="font-size:10px;font-weight:400;">포털</span></td>
+            <td style="padding:6px 12px;"><span style="background:var(--color-background-info);color:var(--color-text-info);font-size:11px;padding:1px 5px;border-radius:3px;">P2</span></td>
+            <td style="padding:6px 12px;color:var(--text-muted);">🆕 <code class="k">/suppliers/{id}/profile</code> · <code class="k">/supply-chain</code> · <code class="k">/request-items (GET)</code> · <code class="k">/notifications</code> · <code class="k">PATCH /notifications/{id}/read</code></td>
+          </tr>
+          <tr>
+            <td style="padding:6px 12px;font-weight:600;color:var(--text);">supplier ③<br><span style="font-size:10px;font-weight:400;">온보딩·제출·위반</span></td>
+            <td style="padding:6px 12px;"><span style="background:var(--color-background-danger);color:var(--color-text-danger);font-size:11px;padding:1px 5px;border-radius:3px;">P1·P2</span></td>
+            <td style="padding:6px 12px;color:var(--text-muted);">🆕 <code class="k">/onboarding/register</code>(firstTier/nTier 분기) · <code class="k">/submissions</code>(multipart) · <code class="k">/ai-parsing/{id}</code> · <code class="k">/ai-parsing/confirm</code> · <code class="k">/supply-chain-map (POST·PATCH)</code> · <code class="k">/violations</code> · <code class="k">/self-report/supply-source-change</code></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- C 은지 -->
+    <div style="border:0.5px solid var(--border);border-radius:8px;overflow:hidden;margin-bottom:10px;">
+      <div style="background:var(--bg);padding:8px 12px;display:flex;align-items:center;gap:10px;border-bottom:0.5px solid var(--border);">
+        <span style="font-size:13px;font-weight:700;color:var(--text);">C · 은지</span>
+        <span style="font-size:11px;color:var(--text-faint);">regulation · product</span>
+        <span style="margin-left:auto;font-size:11px;background:var(--color-background-info);color:var(--color-text-info);padding:1px 7px;border-radius:3px;">P2–P3</span>
+      </div>
+      <table style="width:100%;border-collapse:collapse;font-size:12px;">
+        <tbody>
+          <tr style="border-bottom:0.5px solid var(--border);background:var(--bg);">
+            <td style="padding:6px 12px;width:14%;font-weight:600;color:var(--text);">regulation</td>
+            <td style="padding:6px 12px;width:8%;"><span style="background:var(--color-background-info);color:var(--color-text-info);font-size:11px;padding:1px 5px;border-radius:3px;">P2</span></td>
+            <td style="padding:6px 12px;color:var(--text-muted);">🆕 <code class="k">GET /violations?limit=&supplier_id=</code> · <code class="k">GET /materials/regulation-results</code> — compliance_results 조회 서비스 1벌 작성, supplier §13.1은 위임 호출. tenant 없으면 batches 조인 스코프</td>
+          </tr>
+          <tr>
+            <td style="padding:6px 12px;font-weight:600;color:var(--text);">product · BOM</td>
+            <td style="padding:6px 12px;"><span style="background:var(--color-background-secondary);color:var(--color-text-secondary);font-size:11px;padding:1px 5px;border-radius:3px;">P3·재합의</span></td>
+            <td style="padding:6px 12px;color:var(--text-muted);">🟡 <code class="k">GET /products/{id}/bom</code> — ① 쿼리: <code class="k">?as_of=</code>(현행) vs <code class="k">?bom_version_id=</code> &nbsp;② 응답: 트리 객체 vs <code class="k">{bomVersions, parts, bomItems}</code>. <b>프론트와 합의 전 구현 보류</b></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- D 영수 -->
+    <div style="border:0.5px solid var(--border);border-radius:8px;overflow:hidden;margin-bottom:10px;">
+      <div style="background:var(--bg);padding:8px 12px;display:flex;align-items:center;gap:10px;border-bottom:0.5px solid var(--border);">
+        <span style="font-size:13px;font-weight:700;color:var(--text);">D · 영수</span>
+        <span style="font-size:11px;color:var(--text-faint);">supplychain · due_diligence · supplier 초대</span>
+        <span style="margin-left:auto;font-size:11px;background:var(--color-background-info);color:var(--color-text-info);padding:1px 7px;border-radius:3px;">P2–P3</span>
+      </div>
+      <table style="width:100%;border-collapse:collapse;font-size:12px;">
+        <tbody>
+          <tr style="border-bottom:0.5px solid var(--border);background:var(--bg);">
+            <td style="padding:6px 12px;width:14%;font-weight:600;color:var(--text);">supplychain</td>
+            <td style="padding:6px 12px;width:8%;"><span style="background:var(--color-background-info);color:var(--color-text-info);font-size:11px;padding:1px 5px;border-radius:3px;">P2</span></td>
+            <td style="padding:6px 12px;color:var(--text-muted);">🆕 <code class="k">GET /products/{id}/supply-chain-map?bom_version_id=&period_from=&period_to=</code> · <code class="k">POST /supply-chain/maps/{id}/confirm</code> — 현재 mock.ts 구동. supply_chain_map 인터페이스 먼저 확정 후 supplier §9·§11·§13 이벤트 연동</td>
+          </tr>
+          <tr style="border-bottom:0.5px solid var(--border);">
+            <td style="padding:6px 12px;font-weight:600;color:var(--text);">supplier ④<br><span style="font-size:10px;font-weight:400;">초대·자료요청</span></td>
+            <td style="padding:6px 12px;"><span style="background:var(--color-background-info);color:var(--color-text-info);font-size:11px;padding:1px 5px;border-radius:3px;">P2</span></td>
+            <td style="padding:6px 12px;color:var(--text-muted);">🆕 <code class="k">/suppliers/{id}/downstream-candidates</code> · <code class="k">/send-invitation</code> · <code class="k">PATCH /invitation/{id}</code> · <code class="k">/data-requests (POST)</code> · <code class="k">/send-reminder</code></td>
+          </tr>
+          <tr>
+            <td style="padding:6px 12px;font-weight:600;color:var(--text);">due_diligence 🆕</td>
+            <td style="padding:6px 12px;"><span style="background:var(--color-background-secondary);color:var(--color-text-secondary);font-size:11px;padding:1px 5px;border-radius:3px;">P3</span></td>
+            <td style="padding:6px 12px;color:var(--text-muted);">신규 폴더 <code class="k">backend/domains/due_diligence/</code> 신설 + <code class="k">main.py</code> include 등록. <code class="k">GET /due-diligence?status=&search=</code> · <code class="k">GET /{auditId}</code> · <code class="k">POST /due-diligence</code> · <code class="k">PATCH /{id}/report</code>(multipart) · <code class="k">PATCH /{id}/capa/{capaId}</code></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- E 차윤 -->
+    <div style="border:0.5px solid var(--border);border-radius:8px;overflow:hidden;">
+      <div style="background:var(--bg);padding:8px 12px;display:flex;align-items:center;gap:10px;border-bottom:0.5px solid var(--border);">
+        <span style="font-size:13px;font-weight:700;color:var(--text);">E · 차윤</span>
+        <span style="font-size:11px;color:var(--text-faint);">submission · dpp</span>
+        <span style="margin-left:auto;font-size:11px;background:var(--color-background-danger);color:var(--color-text-danger);padding:1px 7px;border-radius:3px;">P1 포함</span>
+      </div>
+      <table style="width:100%;border-collapse:collapse;font-size:12px;">
+        <tbody>
+          <tr style="border-bottom:0.5px solid var(--border);background:var(--bg);">
+            <td style="padding:6px 12px;width:14%;font-weight:600;color:var(--text);">submission</td>
+            <td style="padding:6px 12px;width:8%;"><span style="background:var(--color-background-danger);color:var(--color-text-danger);font-size:11px;padding:1px 5px;border-radius:3px;">P1</span></td>
+            <td style="padding:6px 12px;color:var(--text-muted);">🆕 <code class="k">GET /submissions</code>(+X-Total-Count) · <code class="k">GET /submissions/{id}</code>(checks 포함) · <code class="k">PATCH /{id}/approve·rework·reject</code> — approve 시 commit 후 <code class="k">SubmissionApproved</code> 이벤트 publish 필수 (graph 트리거 이미 구독됨)</td>
+          </tr>
+          <tr>
+            <td style="padding:6px 12px;font-weight:600;color:var(--text);">dpp</td>
+            <td style="padding:6px 12px;"><span style="background:var(--color-background-info);color:var(--color-text-info);font-size:11px;padding:1px 5px;border-radius:3px;">P2</span></td>
+            <td style="padding:6px 12px;color:var(--text-muted);">🟡 <code class="k">GET /dpp/products?readiness_status=hold</code> 보류 목록 신설 · 🔵 기존 issue/records/readiness 유지 — <code class="k">dppId</code>(UUID) 키 고정, serialNumber 신설 금지. dpp_records에 tenant_id 없으면 batches 조인 스코프</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
 
   <!-- 데모 시나리오 -->
   <div class="card">
