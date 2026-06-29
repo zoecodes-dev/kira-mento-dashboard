@@ -392,7 +392,8 @@ ul.tight li b { color:var(--text); font-weight:500; }
     <button class="nav-item" onclick="showPage('w3', this)"><span class="dot dot-done"></span>W3 — LangGraph 조립<span class="dot-range">6/2–6/8</span></button>
     <button class="nav-item" onclick="showPage('w4', this)"><span class="dot dot-done"></span>W4 — 파이프라인 통합<span class="dot-range">6/8–6/14</span></button>
     <button class="nav-item" onclick="showPage('w5', this)"><span class="dot dot-done"></span>W5 — 프론트엔드 연동 준비<span class="dot-range">6/16–6/22</span></button>
-    <button class="nav-item" onclick="showPage('w6', this)"><span class="dot dot-wip"></span>W6 — 델타 데모 구현 준비<span class="dot-range">6/23–6/29</span></button>
+    <button class="nav-item" onclick="showPage('w6', this)"><span class="dot dot-done"></span>W6 — 델타 데모 구현 준비<span class="dot-range">6/23–6/29</span></button>
+    <button class="nav-item" onclick="showPage('w7', this)"><span class="dot dot-wip"></span>W7 - 배선 AI 강화 데모 정제<span class="dot-range">6/29–7/5</span></button>
   </nav>
   <div class="sidebar-links">
     <div class="nav-label">바로가기</div>
@@ -426,7 +427,7 @@ ul.tight li b { color:var(--text); font-weight:500; }
 <!-- OVERVIEW -->
 <div class="page active" id="page-overview">
   <h1 class="page-title">KIRA 프로젝트 (Key Insight &amp; Risk Analytics)</h1>
-  <p class="page-sub">Battery EV Digital Product Passport · EU 공급망 컴플라이언스 인텔리전스 플랫폼 · 6주 스프린트 계획</p>
+  <p class="page-sub">EU 공급망 컴플라이언스 인텔리전스 플랫폼 · 6주 스프린트 → W7 연장 진행 중</p>
 
   <div class="stat-grid">
     <div class="stat-card"><div class="stat-num">W6</div><div class="stat-label">현재 주차 (진행 중)</div></div>
@@ -435,9 +436,20 @@ ul.tight li b { color:var(--text); font-weight:500; }
   </div>
 
   <div class="card">
-    <div class="card-label">6주 스프린트 진행률</div>
-    <div class="progress-bar-wrap"><div class="progress-bar" style="width:42%"></div></div>
-    <div class="progress-label">사전 기획 (4/28~5/18) · W1 완료 (5/19~5/24) · W2 완료 (5/25~5/31) · W3 완료 (6/1~6/7) · W4 완료 (6/8~6/14) · W5 완료 (6/15~6/21) · W6 진행 중 (6/22~6/28)</div>
+    <div class="card-label" style="display:flex;align-items:center;gap:8px;">6주 스프린트 진행률 <span style="font-size:11px;font-weight:500;background:var(--amber-bg);color:var(--amber);padding:1px 8px;border-radius:3px;">+1주 초과 · W7 연장</span></div>
+    <div style="position:relative;margin:14px 0 4px;">
+      <!-- 6주 기준선 표시 -->
+      <div style="position:absolute;left:calc(100% * 6/7);top:-14px;font-size:10px;color:var(--amber);white-space:nowrap;">6주 종료↓</div>
+      <div style="position:absolute;left:calc(100% * 6/7);top:0;width:1.5px;height:6px;background:var(--amber);border-radius:1px;z-index:2;"></div>
+      <div class="progress-bar-wrap" style="margin:0;position:relative;">
+        <!-- 6주분 (W1~W6) 완료 - 초과분은 amber -->
+        <div style="height:6px;border-radius:99px;background:var(--text);width:calc(100% * 6/7);position:absolute;top:0;left:0;"></div>
+        <!-- W7 초과분 -->
+        <div style="height:6px;border-radius:0 99px 99px 0;background:var(--amber);width:calc(100% * 1/7 - 2px);position:absolute;top:0;left:calc(100% * 6/7 + 2px);"></div>
+      </div>
+      <div style="height:6px;"></div>
+    </div>
+    <div class="progress-label">사전 기획 (4/28~5/18) · W1 완료 (5/19~5/24) · W2 완료 (5/25~5/31) · W3 완료 (6/1~6/7) · W4 완료 (6/8~6/14) · W5 완료 (6/15~6/21) · W6 완료 (6/22~6/28) · <span style="color:var(--amber);font-weight:500;">W7 진행 중 (6/29~7/5) — 6주 초과</span></div>
     <hr class="divider">
     <div class="mini">
       <div style="text-align:center;"><div style="font-size:11px;font-weight:500;color:var(--green);margin-bottom:4px;">W1<br>5/19–24</div><div style="height:4px;background:var(--green);border-radius:99px;"></div></div>
@@ -445,7 +457,8 @@ ul.tight li b { color:var(--text); font-weight:500; }
       <div style="text-align:center;"><div style="font-size:11px;font-weight:500;color:var(--green);margin-bottom:4px;">W3<br>6/1–6/7</div><div style="height:4px;background:var(--green);border-radius:99px;"></div></div>
       <div style="text-align:center;"><div style="font-size:11px;font-weight:500;color:var(--green);margin-bottom:4px;">W4<br>6/8–14</div><div style="height:4px;background:var(--green);border-radius:99px;"></div></div>
       <div style="text-align:center;"><div style="font-size:11px;font-weight:500;color:var(--green);margin-bottom:4px;">W5<br>6/15–21</div><div style="height:4px;background:var(--green);border-radius:99px;"></div></div>
-      <div style="text-align:center;"><div style="font-size:11px;font-weight:500;color:var(--amber);margin-bottom:4px;">W6<br>6/22–28</div><div style="height:4px;background:var(--amber);border-radius:99px;"></div></div>
+      <div style="text-align:center;"><div style="font-size:11px;font-weight:500;color:var(--green);margin-bottom:4px;">W6<br>6/22–28</div><div style="height:4px;background:var(--green);border-radius:99px;"></div></div>
+      <div style="text-align:center;"><div style="font-size:11px;font-weight:500;color:var(--amber);margin-bottom:4px;">W7<br>6/29–7/5</div><div style="height:4px;background:var(--amber);border-radius:99px;"></div></div>
     </div>
   </div>
 
@@ -475,284 +488,184 @@ ul.tight li b { color:var(--text); font-weight:500; }
 
   <div class="card">
     <div class="card-label">전체 시스템 구조</div>
-    <div class="slide-area"><svg width="100%" viewBox="0 0 680 470" role="img" styles="" xmlns="http://www.w3.org/2000/svg"><title style="fill:rgb(0, 0, 0);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto">KIRA 전체 구조와 5인 담당</title><desc style="fill:rgb(0, 0, 0);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto">2층 구조: 위층은 AI 5인 에이전트 파이프라인, 아래층은 공급망 데이터 백본. 두 층이 같은 DB를 공유한다.</desc>
-<defs><marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
-
-<text x="40" y="28" style="fill:rgb(20, 20, 19);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:14px;font-weight:500;text-anchor:start;dominant-baseline:auto">KIRA — 배터리 공급망 규제 자동 심사 · DPP 발행</text>
-<text x="40" y="46" style="fill:rgb(61, 61, 58);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:12px;font-weight:400;text-anchor:start;dominant-baseline:auto">협력사가 올린 문서를 AI 5인이 규제 검증하고, 통과하면 디지털 제품여권(DPP)을 발행</text>
-
-<g style="fill:rgb(0, 0, 0);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"><rect x="40" y="62" width="600" height="208" rx="16" stroke-width="0.5" style="fill:rgb(238, 237, 254);stroke:rgb(83, 74, 183);color:rgb(0, 0, 0);stroke-width:0.5px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/></g>
-<text x="60" y="86" style="fill:rgb(20, 20, 19);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:14px;font-weight:500;text-anchor:start;dominant-baseline:auto">Layer 2 — AI 자동화 (에이전트 5인 파이프라인)</text>
-
-<g style="fill:rgb(0, 0, 0);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"><rect x="60" y="100" width="150" height="56" rx="8" stroke-width="0.5" style="fill:rgb(230, 241, 251);stroke:rgb(24, 95, 165);color:rgb(0, 0, 0);stroke-width:0.5px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
-<text x="135" y="120" text-anchor="middle" style="fill:rgb(12, 68, 124);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:14px;font-weight:500;text-anchor:middle;dominant-baseline:auto">지혜 · supervisor</text>
-<text x="135" y="138" text-anchor="middle" style="fill:rgb(24, 95, 165);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:12px;font-weight:400;text-anchor:middle;dominant-baseline:auto">길 안내 + 조립</text></g>
-
-<g style="fill:rgb(0, 0, 0);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"><rect x="240" y="100" width="120" height="56" rx="8" stroke-width="0.5" style="fill:rgb(225, 245, 238);stroke:rgb(15, 110, 86);color:rgb(0, 0, 0);stroke-width:0.5px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
-<text x="300" y="120" text-anchor="middle" style="fill:rgb(8, 80, 65);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:14px;font-weight:500;text-anchor:middle;dominant-baseline:auto">은진</text>
-<text x="300" y="138" text-anchor="middle" style="fill:rgb(15, 110, 86);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:12px;font-weight:400;text-anchor:middle;dominant-baseline:auto">문서 추출</text></g>
-
-<g style="fill:rgb(0, 0, 0);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"><rect x="380" y="100" width="120" height="56" rx="8" stroke-width="0.5" style="fill:rgb(225, 245, 238);stroke:rgb(15, 110, 86);color:rgb(0, 0, 0);stroke-width:0.5px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
-<text x="440" y="120" text-anchor="middle" style="fill:rgb(8, 80, 65);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:14px;font-weight:500;text-anchor:middle;dominant-baseline:auto">영수</text>
-<text x="440" y="138" text-anchor="middle" style="fill:rgb(15, 110, 86);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:12px;font-weight:400;text-anchor:middle;dominant-baseline:auto">좌표 검사</text></g>
-
-<g style="fill:rgb(0, 0, 0);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"><rect x="520" y="100" width="100" height="56" rx="8" stroke-width="0.5" style="fill:rgb(225, 245, 238);stroke:rgb(15, 110, 86);color:rgb(0, 0, 0);stroke-width:0.5px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
-<text x="570" y="120" text-anchor="middle" style="fill:rgb(8, 80, 65);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:14px;font-weight:500;text-anchor:middle;dominant-baseline:auto">은지</text>
-<text x="570" y="138" text-anchor="middle" style="fill:rgb(15, 110, 86);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:12px;font-weight:400;text-anchor:middle;dominant-baseline:auto">규제 판정</text></g>
-
-<g style="fill:rgb(0, 0, 0);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"><rect x="240" y="172" width="120" height="56" rx="8" stroke-width="0.5" style="fill:rgb(225, 245, 238);stroke:rgb(15, 110, 86);color:rgb(0, 0, 0);stroke-width:0.5px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
-<text x="300" y="192" text-anchor="middle" style="fill:rgb(8, 80, 65);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:14px;font-weight:500;text-anchor:middle;dominant-baseline:auto">차윤 · 위험</text>
-<text x="300" y="210" text-anchor="middle" style="fill:rgb(15, 110, 86);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:12px;font-weight:400;text-anchor:middle;dominant-baseline:auto">점수 합산</text></g>
-
-<g style="fill:rgb(0, 0, 0);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"><rect x="380" y="172" width="120" height="56" rx="8" stroke-width="0.5" style="fill:rgb(225, 245, 238);stroke:rgb(15, 110, 86);color:rgb(0, 0, 0);stroke-width:0.5px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
-<text x="440" y="192" text-anchor="middle" style="fill:rgb(8, 80, 65);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:14px;font-weight:500;text-anchor:middle;dominant-baseline:auto">차윤 · 준비도</text>
-<text x="440" y="210" text-anchor="middle" style="fill:rgb(15, 110, 86);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:12px;font-weight:400;text-anchor:middle;dominant-baseline:auto">발행 가능?</text></g>
-
-<g style="fill:rgb(0, 0, 0);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"><rect x="520" y="172" width="100" height="56" rx="8" stroke-width="0.5" style="fill:rgb(234, 243, 222);stroke:rgb(59, 109, 17);color:rgb(0, 0, 0);stroke-width:0.5px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
-<text x="570" y="192" text-anchor="middle" style="fill:rgb(39, 80, 10);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:14px;font-weight:500;text-anchor:middle;dominant-baseline:auto">차윤 · 발행</text>
-<text x="570" y="210" text-anchor="middle" style="fill:rgb(59, 109, 17);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:12px;font-weight:400;text-anchor:middle;dominant-baseline:auto">DPP 생성</text></g>
-
-<g style="fill:rgb(0, 0, 0);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"><rect x="60" y="172" width="150" height="56" rx="8" stroke-width="0.5" style="fill:rgb(250, 238, 218);stroke:rgb(133, 79, 11);color:rgb(0, 0, 0);stroke-width:0.5px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
-<text x="135" y="192" text-anchor="middle" style="fill:rgb(99, 56, 6);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:14px;font-weight:500;text-anchor:middle;dominant-baseline:auto">지혜 · HITL 멈춤</text>
-<text x="135" y="210" text-anchor="middle" style="fill:rgb(133, 79, 11);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:12px;font-weight:400;text-anchor:middle;dominant-baseline:auto">애매하면 사람에게</text></g>
-
-<text x="60" y="252" text-anchor="start" style="fill:rgb(61, 61, 58);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:12px;font-weight:400;text-anchor:start;dominant-baseline:auto">지혜가 신뢰도·단계를 보고 다음 노드로 보냄. 애매하면(0.85 미만) 멈추고 사람 검토</text>
-
-<line x1="340" y1="270" x2="340" y2="300" marker-end="url(#arrow)" style="fill:none;stroke:rgb(115, 114, 108);color:rgb(0, 0, 0);stroke-width:1.5px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
-<text x="356" y="289" text-anchor="start" style="fill:rgb(61, 61, 58);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:12px;font-weight:400;text-anchor:start;dominant-baseline:auto">같은 DB 공유</text>
-
-<g style="fill:rgb(0, 0, 0);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"><rect x="40" y="300" width="600" height="120" rx="16" stroke-width="0.5" style="fill:rgb(241, 239, 232);stroke:rgb(95, 94, 90);color:rgb(0, 0, 0);stroke-width:0.5px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/></g>
-<text x="60" y="326" style="fill:rgb(20, 20, 19);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:14px;font-weight:500;text-anchor:start;dominant-baseline:auto">Layer 1 — 공급망 데이터 백본</text>
-<text x="60" y="346" style="fill:rgb(61, 61, 58);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:12px;font-weight:400;text-anchor:start;dominant-baseline:auto">PostgreSQL + PostGIS(좌표) + pgvector(법령 검색) · 44개 테이블</text>
-
-<g style="fill:rgb(0, 0, 0);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"><rect x="60" y="360" width="160" height="44" rx="8" stroke-width="0.5" style="fill:rgb(241, 239, 232);stroke:rgb(95, 94, 90);color:rgb(0, 0, 0);stroke-width:0.5px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
-<text x="140" y="384" text-anchor="middle" style="fill:rgb(95, 94, 90);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:12px;font-weight:400;text-anchor:middle;dominant-baseline:auto">원청 ERP/MES 동기화</text></g>
-<g style="fill:rgb(0, 0, 0);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"><rect x="240" y="360" width="160" height="44" rx="8" stroke-width="0.5" style="fill:rgb(241, 239, 232);stroke:rgb(95, 94, 90);color:rgb(0, 0, 0);stroke-width:0.5px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
-<text x="320" y="384" text-anchor="middle" style="fill:rgb(95, 94, 90);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:12px;font-weight:400;text-anchor:middle;dominant-baseline:auto">협력사 포털 입력</text></g>
-<g style="fill:rgb(0, 0, 0);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"><rect x="420" y="360" width="200" height="44" rx="8" stroke-width="0.5" style="fill:rgb(241, 239, 232);stroke:rgb(95, 94, 90);color:rgb(0, 0, 0);stroke-width:0.5px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
-<text x="520" y="384" text-anchor="middle" style="fill:rgb(95, 94, 90);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:12px;font-weight:400;text-anchor:middle;dominant-baseline:auto">감사 기록 (위변조 방지 해시)</text></g>
-
-  <!-- 프로세스 플로우 SVG -->
-  <div class="card" style="margin-bottom:16px;">
-    <div class="card-label">핵심동선 화면 흐름 — 페르소나별 단계 개요</div>
-    <div style="margin-top:8px;overflow-x:auto;">
-<svg width="100%" viewBox="0 0 680 440" role="img" style="" xmlns="http://www.w3.org/2000/svg">
-<title style="fill:rgb(0, 0, 0);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto">KIRA 핵심동선 화면 흐름 — 페르소나별 단계</title>
-<desc style="fill:rgb(0, 0, 0);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto">원청, 협력사, 감사 세 페르소나를 오가며 Pool 구축부터 DPP 발행·전송까지 이어지는 화면 흐름 개요</desc>
+    <div class="slide-area"><svg width="100%" viewBox="0 0 680 400" role="img" xmlns="http://www.w3.org/2000/svg">
 <defs>
-<marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker>
-<mask id="imagine-text-gaps-t7v0s9" maskUnits="userSpaceOnUse"><rect x="0" y="0" width="680" height="440" fill="white"/><rect x="36" y="12" width="129.89190673828125" height="22" fill="black" rx="2"/><rect x="542.859375" y="14" width="101.140625" height="19" fill="black" rx="2"/><rect x="79.953125" y="86" width="30.09375" height="19" fill="black" rx="2"/><rect x="74.4375" y="211" width="41.125" height="19" fill="black" rx="2"/><rect x="79.953125" y="336" width="30.09375" height="19" fill="black" rx="2"/><rect x="188.25" y="79" width="82.61993408203125" height="22" fill="black" rx="2"/><rect x="190.0390625" y="98.5" width="79.921875" height="19" fill="black" rx="2"/><rect x="339.203125" y="204" width="80.59375" height="22" fill="black" rx="2"/><rect x="341.4609375" y="223.5" width="77.078125" height="19" fill="black" rx="2"/><rect x="347.3828125" y="79" width="65.234375" height="22" fill="black" rx="2"/><rect x="340.7890625" y="98.5" width="78.421875" height="19" fill="black" rx="2"/><rect x="490.796875" y="329" width="78.40625" height="22" fill="black" rx="2"/><rect x="500.6640625" y="348.5" width="58.671875" height="19" fill="black" rx="2"/><rect x="491.3203125" y="79" width="77.359375" height="22" fill="black" rx="2"/><rect x="492.0859375" y="98.5" width="76.6279296875" height="19" fill="black" rx="2"/><rect x="488.9765625" y="171" width="81.156982421875" height="22" fill="black" rx="2"/><rect x="36" y="390" width="228.28125" height="19" fill="black" rx="2"/></mask></defs>
+<marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+  <path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</marker>
+</defs>
 
-<text x="40" y="28" text-anchor="start" style="fill:rgb(20, 20, 19);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:14px;font-weight:500;text-anchor:start;dominant-baseline:auto">페르소나별 단계 흐름</text>
-<text x="640" y="28" text-anchor="end" style="fill:rgb(61, 61, 58);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:12px;font-weight:400;text-anchor:end;dominant-baseline:auto">원청 · 협력사 · 감사</text>
+<!-- 제목 -->
+<text x="40" y="24" style="fill:rgb(20,20,19);font-family:'Anthropic Sans',-apple-system,sans-serif;font-size:14px;font-weight:500;text-anchor:start;">KIRA — 배터리 공급망 규제 자동 심사</text>
+<text x="40" y="42" style="fill:rgb(61,61,58);font-family:'Anthropic Sans',-apple-system,sans-serif;font-size:12px;text-anchor:start;">협력사가 올린 문서를 AI 4인이 규제 검증하고 결과를 고객사에 전송</text>
 
-<line x1="150" y1="44" x2="150" y2="410" stroke="var(--t)" stroke-width="0.5" opacity="0.25" mask="url(#imagine-text-gaps-t7v0s9)" style="fill:rgb(0, 0, 0);stroke:rgb(115, 114, 108);color:rgb(0, 0, 0);stroke-width:0.5px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.25;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<!-- Layer 2 레이블 -->
+<text x="340" y="70" text-anchor="middle" style="fill:rgb(61,61,58);font-family:'Anthropic Sans',-apple-system,sans-serif;font-size:11px;font-weight:500;">Layer 2 — AI 자동화 (에이전트 4인 파이프라인)</text>
 
-<text x="95" y="100" text-anchor="middle" style="fill:rgb(61, 61, 58);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:12px;font-weight:400;text-anchor:middle;dominant-baseline:auto">원청</text>
-<text x="95" y="225" text-anchor="middle" style="fill:rgb(61, 61, 58);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:12px;font-weight:400;text-anchor:middle;dominant-baseline:auto">협력사</text>
-<text x="95" y="350" text-anchor="middle" style="fill:rgb(61, 61, 58);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:12px;font-weight:400;text-anchor:middle;dominant-baseline:auto">감사</text>
+<!-- 노드 박스 — 가로 배치 x: 60 190 320 450 580 -->
 
-<g style="fill:rgb(0, 0, 0);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto">
-<rect x="170" y="70" width="120" height="56" rx="8" stroke-width="0.5" style="fill:rgb(225, 245, 238);stroke:rgb(15, 110, 86);color:rgb(0, 0, 0);stroke-width:0.5px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
-<text x="230" y="90" text-anchor="middle" dominant-baseline="central" style="fill:rgb(8, 80, 65);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:14px;font-weight:500;text-anchor:middle;dominant-baseline:central">A. Pool 구축</text>
-<text x="230" y="108" text-anchor="middle" dominant-baseline="central" style="fill:rgb(15, 110, 86);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:12px;font-weight:400;text-anchor:middle;dominant-baseline:central">초대·맵핑·요청</text>
-</g>
+<!-- 지혜 · supervisor -->
+<rect x="35" y="82" width="110" height="60" rx="8" fill="rgb(219,234,254)" stroke="rgb(30,86,160)" stroke-width="0.5"/>
+<text x="90" y="104" text-anchor="middle" dominant-baseline="central" style="fill:rgb(12,68,124);font-family:'Anthropic Sans',-apple-system,sans-serif;font-size:13px;font-weight:500;">지혜 · supervisor</text>
+<text x="90" y="122" text-anchor="middle" dominant-baseline="central" style="fill:rgb(30,86,160);font-family:'Anthropic Sans',-apple-system,sans-serif;font-size:11px;">길 안내 + 조립</text>
 
-<g style="fill:rgb(0, 0, 0);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto">
-<rect x="320" y="195" width="120" height="56" rx="8" stroke-width="0.5" style="fill:rgb(250, 238, 218);stroke:rgb(133, 79, 11);color:rgb(0, 0, 0);stroke-width:0.5px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
-<text x="380" y="215" text-anchor="middle" dominant-baseline="central" style="fill:rgb(99, 56, 6);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:14px;font-weight:500;text-anchor:middle;dominant-baseline:central">C. 정보 입력</text>
-<text x="380" y="233" text-anchor="middle" dominant-baseline="central" style="fill:rgb(133, 79, 11);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:12px;font-weight:400;text-anchor:middle;dominant-baseline:central">표준양식·문서</text>
-</g>
+<!-- 지혜 · 문서 추출 (data_gateway) -->
+<rect x="165" y="82" width="110" height="60" rx="8" fill="rgb(219,234,254)" stroke="rgb(30,86,160)" stroke-width="0.5"/>
+<text x="220" y="104" text-anchor="middle" dominant-baseline="central" style="fill:rgb(12,68,124);font-family:'Anthropic Sans',-apple-system,sans-serif;font-size:13px;font-weight:500;">지혜</text>
+<text x="220" y="122" text-anchor="middle" dominant-baseline="central" style="fill:rgb(30,86,160);font-family:'Anthropic Sans',-apple-system,sans-serif;font-size:11px;">문서 추출</text>
 
-<g style="fill:rgb(0, 0, 0);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto">
-<rect x="320" y="70" width="120" height="56" rx="8" stroke-width="0.5" style="fill:rgb(225, 245, 238);stroke:rgb(15, 110, 86);color:rgb(0, 0, 0);stroke-width:0.5px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
-<text x="380" y="90" text-anchor="middle" dominant-baseline="central" style="fill:rgb(8, 80, 65);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:14px;font-weight:500;text-anchor:middle;dominant-baseline:central">B. 맵 전개</text>
-<text x="380" y="108" text-anchor="middle" dominant-baseline="central" style="fill:rgb(15, 110, 86);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:12px;font-weight:400;text-anchor:middle;dominant-baseline:central">트리·gap·요청</text>
-</g>
+<!-- 영수 -->
+<rect x="295" y="82" width="110" height="60" rx="8" fill="rgb(225,245,238)" stroke="rgb(15,110,86)" stroke-width="0.5"/>
+<text x="350" y="104" text-anchor="middle" dominant-baseline="central" style="fill:rgb(8,80,65);font-family:'Anthropic Sans',-apple-system,sans-serif;font-size:13px;font-weight:500;">영수</text>
+<text x="350" y="122" text-anchor="middle" dominant-baseline="central" style="fill:rgb(15,110,86);font-family:'Anthropic Sans',-apple-system,sans-serif;font-size:11px;">좌표 검사</text>
 
-<g style="fill:rgb(0, 0, 0);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto">
-<rect x="470" y="320" width="120" height="56" rx="8" stroke-width="0.5" style="fill:rgb(238, 237, 254);stroke:rgb(83, 74, 183);color:rgb(0, 0, 0);stroke-width:0.5px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
-<text x="530" y="340" text-anchor="middle" dominant-baseline="central" style="fill:rgb(60, 52, 137);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:14px;font-weight:500;text-anchor:middle;dominant-baseline:central">E. 검토·판정</text>
-<text x="530" y="358" text-anchor="middle" dominant-baseline="central" style="fill:rgb(83, 74, 183);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:12px;font-weight:400;text-anchor:middle;dominant-baseline:central">HITL 보류</text>
-</g>
+<!-- 은지 -->
+<rect x="425" y="82" width="110" height="60" rx="8" fill="rgb(225,245,238)" stroke="rgb(15,110,86)" stroke-width="0.5"/>
+<text x="480" y="104" text-anchor="middle" dominant-baseline="central" style="fill:rgb(8,80,65);font-family:'Anthropic Sans',-apple-system,sans-serif;font-size:13px;font-weight:500;">은지</text>
+<text x="480" y="122" text-anchor="middle" dominant-baseline="central" style="fill:rgb(15,110,86);font-family:'Anthropic Sans',-apple-system,sans-serif;font-size:11px;">규제 판정</text>
 
-<g style="fill:rgb(0, 0, 0);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto">
-<rect x="470" y="70" width="120" height="56" rx="8" stroke-width="0.5" style="fill:rgb(225, 245, 238);stroke:rgb(15, 110, 86);color:rgb(0, 0, 0);stroke-width:0.5px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
-<text x="530" y="90" text-anchor="middle" dominant-baseline="central" style="fill:rgb(8, 80, 65);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:14px;font-weight:500;text-anchor:middle;dominant-baseline:central">F. DPP 발행</text>
-<text x="530" y="108" text-anchor="middle" dominant-baseline="central" style="fill:rgb(15, 110, 86);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:12px;font-weight:400;text-anchor:middle;dominant-baseline:central">준비·발행·QR</text>
-</g>
+<!-- 차윤 · 위험 -->
+<rect x="555" y="82" width="110" height="60" rx="8" fill="rgb(225,245,238)" stroke="rgb(15,110,86)" stroke-width="0.5"/>
+<text x="610" y="104" text-anchor="middle" dominant-baseline="central" style="fill:rgb(8,80,65);font-family:'Anthropic Sans',-apple-system,sans-serif;font-size:13px;font-weight:500;">차윤 · 위험</text>
+<text x="610" y="122" text-anchor="middle" dominant-baseline="central" style="fill:rgb(15,110,86);font-family:'Anthropic Sans',-apple-system,sans-serif;font-size:11px;">점수 합산</text>
 
-<g style="fill:rgb(0, 0, 0);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto">
-<rect x="470" y="160" width="120" height="44" rx="8" stroke-width="0.5" style="fill:rgb(225, 245, 238);stroke:rgb(15, 110, 86);color:rgb(0, 0, 0);stroke-width:0.5px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
-<text x="530" y="182" text-anchor="middle" dominant-baseline="central" style="fill:rgb(8, 80, 65);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:14px;font-weight:500;text-anchor:middle;dominant-baseline:central">G. 대외 전송</text>
-</g>
+<!-- 화살표 -->
+<line x1="145" y1="112" x2="163" y2="112" stroke="rgb(100,100,100)" stroke-width="1" marker-end="url(#arrow)" opacity="0.6"/>
+<line x1="275" y1="112" x2="293" y2="112" stroke="rgb(100,100,100)" stroke-width="1" marker-end="url(#arrow)" opacity="0.6"/>
+<line x1="405" y1="112" x2="423" y2="112" stroke="rgb(100,100,100)" stroke-width="1" marker-end="url(#arrow)" opacity="0.6"/>
+<line x1="535" y1="112" x2="553" y2="112" stroke="rgb(100,100,100)" stroke-width="1" marker-end="url(#arrow)" opacity="0.6"/>
 
-<line x1="290" y1="98" x2="318" y2="98" marker-end="url(#arrow)" style="fill:none;stroke:rgb(115, 114, 108);color:rgb(0, 0, 0);stroke-width:1.5px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
-<path d="M380 126 L380 195" fill="none" marker-end="url(#arrow)" style="fill:none;stroke:rgb(115, 114, 108);color:rgb(0, 0, 0);stroke-width:1.5px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
-<path d="M440 223 L455 223 L455 98 L468 98" fill="none" marker-end="url(#arrow)" style="fill:none;stroke:rgb(115, 114, 108);color:rgb(0, 0, 0);stroke-width:1.5px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
-<path d="M440 240 L530 240 L530 320" fill="none" marker-end="url(#arrow)" style="fill:none;stroke:rgb(115, 114, 108);color:rgb(0, 0, 0);stroke-width:1.5px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
-<path d="M530 320 L530 130" fill="none" stroke-dasharray="4 3" marker-end="url(#arrow)" mask="url(#imagine-text-gaps-t7v0s9)" style="fill:none;stroke:rgb(115, 114, 108);color:rgb(0, 0, 0);stroke-width:1.5px;stroke-dasharray:4px, 3px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
-<line x1="530" y1="126" x2="530" y2="158" marker-end="url(#arrow)" style="fill:none;stroke:rgb(115, 114, 108);color:rgb(0, 0, 0);stroke-width:1.5px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<!-- HITL 분기 박스 (아래) -->
+<rect x="425" y="185" width="110" height="50" rx="8" fill="rgb(238,237,254)" stroke="rgb(83,74,183)" stroke-width="0.5"/>
+<text x="480" y="205" text-anchor="middle" dominant-baseline="central" style="fill:rgb(60,52,137);font-family:'Anthropic Sans',-apple-system,sans-serif;font-size:13px;font-weight:500;">차윤 · HITL</text>
+<text x="480" y="221" text-anchor="middle" dominant-baseline="central" style="fill:rgb(83,74,183);font-family:'Anthropic Sans',-apple-system,sans-serif;font-size:11px;">애매하면 사람에게</text>
 
-<text x="40" y="404" text-anchor="start" style="fill:rgb(61, 61, 58);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:12px;font-weight:400;text-anchor:start;dominant-baseline:auto">실선 = 정방향 흐름 · 점선 = 판정 후 발행 복귀</text>
-</svg>    </div>
-  </div>
+<!-- HITL 화살표 (아래 방향) -->
+<line x1="480" y1="142" x2="480" y2="183" stroke="rgb(83,74,183)" stroke-width="1" stroke-dasharray="4 2" marker-end="url(#arrow)" opacity="0.7"/>
+<text x="497" y="168" style="fill:rgb(83,74,183);font-family:'Anthropic Sans',-apple-system,sans-serif;font-size:10px;">0.85 미만</text>
 
-  <div class="card" style="margin-bottom:16px;">
-    <div class="card-label">협력사 Pool 구축 · 정보 입력 흐름</div>
-    <div style="margin-top:8px;overflow-x:auto;">
-<svg width="100%" viewBox="0 0 680 470" role="img" style="" xmlns="http://www.w3.org/2000/svg">
-<title style="fill:rgb(0, 0, 0);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto">Pool 구축부터 정보 입력까지 화면 흐름</title>
-<desc style="fill:rgb(0, 0, 0);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto">로그인에서 시작해 원청의 Pool 구성·맵 전개와 협력사의 온보딩·표준양식 입력이 핸드오프되는 화면 단위 흐름</desc>
-<defs>
-<marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker>
-<mask id="imagine-text-gaps-4dbjsk" maskUnits="userSpaceOnUse"><rect x="0" y="0" width="680" height="470" fill="white"/><rect x="64.953125" y="56" width="30.09375" height="19" fill="black" rx="2"/><rect x="59.4375" y="276" width="41.125" height="19" fill="black" rx="2"/><rect x="64.78125" y="55" width="39.93096923828125" height="22" fill="black" rx="2"/><rect x="64.4375" y="70.5" width="41.125" height="19" fill="black" rx="2"/><rect x="186.5390625" y="53" width="95.921875" height="22" fill="black" rx="2"/><rect x="189.6640625" y="72.5" width="90.671875" height="19" fill="black" rx="2"/><rect x="335.125" y="53" width="98.75" height="22" fill="black" rx="2"/><rect x="336.125" y="72.5" width="97.75" height="19" fill="black" rx="2"/><rect x="486.390625" y="53" width="96.21875" height="22" fill="black" rx="2"/><rect x="489.6640625" y="72.5" width="90.671875" height="19" fill="black" rx="2"/><rect x="192.4375" y="139" width="84.125" height="22" fill="black" rx="2"/><rect x="191.7578125" y="158.5" width="86.484375" height="19" fill="black" rx="2"/><rect x="349.234375" y="139" width="70.64996337890625" height="22" fill="black" rx="2"/><rect x="346.53125" y="158.5" width="78.49395751953125" height="19" fill="black" rx="2"/><rect x="194.1328125" y="279" width="80.734375" height="22" fill="black" rx="2"/><rect x="195.1875" y="298.5" width="79.625" height="19" fill="black" rx="2"/><rect x="337.78125" y="279" width="93.55392456054688" height="22" fill="black" rx="2"/><rect x="336.2265625" y="298.5" width="97.546875" height="19" fill="black" rx="2"/><rect x="487.828125" y="279" width="93.34375" height="22" fill="black" rx="2"/><rect x="484.1484375" y="298.5" width="101.703125" height="19" fill="black" rx="2"/><rect x="480.0859375" y="369" width="108.93994140625" height="22" fill="black" rx="2"/><rect x="499.171875" y="388.5" width="70.65625" height="19" fill="black" rx="2"/><rect x="336.3125" y="369" width="96.375" height="22" fill="black" rx="2"/><rect x="339.515625" y="388.5" width="90.96875" height="19" fill="black" rx="2"/><rect x="36" y="440" width="267.3125" height="19" fill="black" rx="2"/></mask></defs>
+<!-- supervisor 설명 -->
+<text x="40" y="168" style="fill:rgb(61,61,58);font-family:'Anthropic Sans',-apple-system,sans-serif;font-size:10px;text-anchor:start;">지혜가 신뢰도·단계를 보고 다음 노드로 보냄</text>
 
-<text x="80" y="70" text-anchor="middle" style="fill:rgb(61, 61, 58);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:12px;font-weight:400;text-anchor:middle;dominant-baseline:auto">원청</text>
-<text x="80" y="290" text-anchor="middle" style="fill:rgb(61, 61, 58);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:12px;font-weight:400;text-anchor:middle;dominant-baseline:auto">협력사</text>
-<line x1="150" y1="40" x2="150" y2="440" stroke="var(--t)" stroke-width="0.5" opacity="0.2" mask="url(#imagine-text-gaps-4dbjsk)" style="fill:rgb(0, 0, 0);stroke:rgb(115, 114, 108);color:rgb(0, 0, 0);stroke-width:0.5px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.2;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<!-- 구분선 -->
+<line x1="20" y1="260" x2="660" y2="260" stroke="rgb(150,150,140)" stroke-width="0.5" opacity="0.4" stroke-dasharray="4 3"/>
 
-<g style="fill:rgb(0, 0, 0);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto">
-<rect x="40" y="44" width="90" height="44" rx="8" stroke-width="0.5" style="fill:rgb(241, 239, 232);stroke:rgb(95, 94, 90);color:rgb(0, 0, 0);stroke-width:0.5px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
-<text x="85" y="66" text-anchor="middle" dominant-baseline="central" style="fill:rgb(68, 68, 65);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:14px;font-weight:500;text-anchor:middle;dominant-baseline:central">S-00</text>
-<text x="85" y="80" text-anchor="middle" dominant-baseline="central" style="fill:rgb(95, 94, 90);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:12px;font-weight:400;text-anchor:middle;dominant-baseline:central">로그인</text>
-</g>
+<!-- DB 공유 레이블 -->
+<text x="340" y="248" text-anchor="middle" style="fill:rgb(100,100,95);font-family:'Anthropic Sans',-apple-system,sans-serif;font-size:10px;">같은 DB 공유</text>
 
-<g style="fill:rgb(0, 0, 0);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto">
-<rect x="170" y="44" width="130" height="56" rx="8" stroke-width="0.5" style="fill:rgb(225, 245, 238);stroke:rgb(15, 110, 86);color:rgb(0, 0, 0);stroke-width:0.5px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
-<text x="235" y="64" text-anchor="middle" dominant-baseline="central" style="fill:rgb(8, 80, 65);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:14px;font-weight:500;text-anchor:middle;dominant-baseline:central">S-01 Pool 관리</text>
-<text x="235" y="82" text-anchor="middle" dominant-baseline="central" style="fill:rgb(15, 110, 86);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:12px;font-weight:400;text-anchor:middle;dominant-baseline:central">협력사 목록·만료</text>
-</g>
-<g style="fill:rgb(0, 0, 0);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto">
-<rect x="320" y="44" width="130" height="56" rx="8" stroke-width="0.5" style="fill:rgb(225, 245, 238);stroke:rgb(15, 110, 86);color:rgb(0, 0, 0);stroke-width:0.5px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
-<text x="385" y="64" text-anchor="middle" dominant-baseline="central" style="fill:rgb(8, 80, 65);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:14px;font-weight:500;text-anchor:middle;dominant-baseline:central">S-02 Pool 구성</text>
-<text x="385" y="82" text-anchor="middle" dominant-baseline="central" style="fill:rgb(15, 110, 86);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:12px;font-weight:400;text-anchor:middle;dominant-baseline:central">제품·MBOM 맵핑</text>
-</g>
-<g style="fill:rgb(0, 0, 0);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto">
-<rect x="470" y="44" width="130" height="56" rx="8" stroke-width="0.5" style="fill:rgb(225, 245, 238);stroke:rgb(15, 110, 86);color:rgb(0, 0, 0);stroke-width:0.5px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
-<text x="535" y="64" text-anchor="middle" dominant-baseline="central" style="fill:rgb(8, 80, 65);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:14px;font-weight:500;text-anchor:middle;dominant-baseline:central">S-03 입력 요청</text>
-<text x="535" y="82" text-anchor="middle" dominant-baseline="central" style="fill:rgb(15, 110, 86);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:12px;font-weight:400;text-anchor:middle;dominant-baseline:central">템플릿·메일 발송</text>
-</g>
+<!-- Layer 1 배경 박스 -->
+<rect x="20" y="265" width="640" height="120" rx="8" fill="rgb(248,248,246)" stroke="rgb(180,178,170)" stroke-width="0.5"/>
 
-<g style="fill:rgb(0, 0, 0);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto">
-<rect x="170" y="130" width="130" height="56" rx="8" stroke-width="0.5" style="fill:rgb(225, 245, 238);stroke:rgb(15, 110, 86);color:rgb(0, 0, 0);stroke-width:0.5px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
-<text x="235" y="150" text-anchor="middle" dominant-baseline="central" style="fill:rgb(8, 80, 65);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:14px;font-weight:500;text-anchor:middle;dominant-baseline:central">S-04 맵 생성</text>
-<text x="235" y="168" text-anchor="middle" dominant-baseline="central" style="fill:rgb(15, 110, 86);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:12px;font-weight:400;text-anchor:middle;dominant-baseline:central">제품·BOM 확정</text>
-</g>
-<g style="fill:rgb(0, 0, 0);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto">
-<rect x="320" y="130" width="130" height="56" rx="8" stroke-width="0.5" style="fill:rgb(225, 245, 238);stroke:rgb(15, 110, 86);color:rgb(0, 0, 0);stroke-width:0.5px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
-<text x="385" y="150" text-anchor="middle" dominant-baseline="central" style="fill:rgb(8, 80, 65);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:14px;font-weight:500;text-anchor:middle;dominant-baseline:central">S-05 맵 뷰</text>
-<text x="385" y="168" text-anchor="middle" dominant-baseline="central" style="fill:rgb(15, 110, 86);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:12px;font-weight:400;text-anchor:middle;dominant-baseline:central">트리·geo·gap</text>
-</g>
+<text x="340" y="285" text-anchor="middle" style="fill:rgb(61,61,58);font-family:'Anthropic Sans',-apple-system,sans-serif;font-size:11px;font-weight:500;">Layer 1 — 공급망 데이터 백본</text>
+<text x="340" y="302" text-anchor="middle" style="fill:rgb(100,100,95);font-family:'Anthropic Sans',-apple-system,sans-serif;font-size:11px;">PostgreSQL + PostGIS(좌표) + pgvector(법령 검색) · 44개 테이블</text>
 
-<g style="fill:rgb(0, 0, 0);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto">
-<rect x="170" y="270" width="130" height="56" rx="8" stroke-width="0.5" style="fill:rgb(250, 238, 218);stroke:rgb(133, 79, 11);color:rgb(0, 0, 0);stroke-width:0.5px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
-<text x="235" y="290" text-anchor="middle" dominant-baseline="central" style="fill:rgb(99, 56, 6);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:14px;font-weight:500;text-anchor:middle;dominant-baseline:central">S-20 온보딩</text>
-<text x="235" y="308" text-anchor="middle" dominant-baseline="central" style="fill:rgb(133, 79, 11);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:12px;font-weight:400;text-anchor:middle;dominant-baseline:central">가입·법률 동의</text>
-</g>
-<g style="fill:rgb(0, 0, 0);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto">
-<rect x="320" y="270" width="130" height="56" rx="8" stroke-width="0.5" style="fill:rgb(250, 238, 218);stroke:rgb(133, 79, 11);color:rgb(0, 0, 0);stroke-width:0.5px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
-<text x="385" y="290" text-anchor="middle" dominant-baseline="central" style="fill:rgb(99, 56, 6);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:14px;font-weight:500;text-anchor:middle;dominant-baseline:central">S-21 하위 등록</text>
-<text x="385" y="308" text-anchor="middle" dominant-baseline="central" style="fill:rgb(133, 79, 11);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:12px;font-weight:400;text-anchor:middle;dominant-baseline:central">PIC 3명·하위 초대</text>
-</g>
-<g style="fill:rgb(0, 0, 0);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto">
-<rect x="470" y="270" width="130" height="56" rx="8" stroke-width="0.5" style="fill:rgb(250, 238, 218);stroke:rgb(133, 79, 11);color:rgb(0, 0, 0);stroke-width:0.5px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
-<text x="535" y="290" text-anchor="middle" dominant-baseline="central" style="fill:rgb(99, 56, 6);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:14px;font-weight:500;text-anchor:middle;dominant-baseline:central">S-22 입력양식</text>
-<text x="535" y="308" text-anchor="middle" dominant-baseline="central" style="fill:rgb(133, 79, 11);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:12px;font-weight:400;text-anchor:middle;dominant-baseline:central">표준화·역할 비활성</text>
-</g>
-<g style="fill:rgb(0, 0, 0);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto">
-<rect x="470" y="360" width="130" height="56" rx="8" stroke-width="0.5" style="fill:rgb(250, 238, 218);stroke:rgb(133, 79, 11);color:rgb(0, 0, 0);stroke-width:0.5px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
-<text x="535" y="380" text-anchor="middle" dominant-baseline="central" style="fill:rgb(99, 56, 6);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:14px;font-weight:500;text-anchor:middle;dominant-baseline:central">S-23 문서 업로드</text>
-<text x="535" y="398" text-anchor="middle" dominant-baseline="central" style="fill:rgb(133, 79, 11);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:12px;font-weight:400;text-anchor:middle;dominant-baseline:central">AI 파싱·확인</text>
-</g>
-<g style="fill:rgb(0, 0, 0);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto">
-<rect x="320" y="360" width="130" height="56" rx="8" stroke-width="0.5" style="fill:rgb(250, 238, 218);stroke:rgb(133, 79, 11);color:rgb(0, 0, 0);stroke-width:0.5px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
-<text x="385" y="380" text-anchor="middle" dominant-baseline="central" style="fill:rgb(99, 56, 6);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:14px;font-weight:500;text-anchor:middle;dominant-baseline:central">S-24 제출 추적</text>
-<text x="385" y="398" text-anchor="middle" dominant-baseline="central" style="fill:rgb(133, 79, 11);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:12px;font-weight:400;text-anchor:middle;dominant-baseline:central">상태·반려·재제출</text>
-</g>
+<!-- 데이터 소스 3종 박스 -->
+<rect x="40" y="315" width="175" height="54" rx="6" fill="rgb(240,240,238)" stroke="rgb(180,178,170)" stroke-width="0.5"/>
+<text x="127" y="337" text-anchor="middle" dominant-baseline="central" style="fill:rgb(61,61,58);font-family:'Anthropic Sans',-apple-system,sans-serif;font-size:11px;">원청 ERP/MES 동기화</text>
 
-<line x1="130" y1="66" x2="168" y2="68" marker-end="url(#arrow)" style="fill:none;stroke:rgb(115, 114, 108);color:rgb(0, 0, 0);stroke-width:1.5px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
-<line x1="300" y1="72" x2="318" y2="72" marker-end="url(#arrow)" style="fill:none;stroke:rgb(115, 114, 108);color:rgb(0, 0, 0);stroke-width:1.5px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
-<line x1="450" y1="72" x2="468" y2="72" marker-end="url(#arrow)" style="fill:none;stroke:rgb(115, 114, 108);color:rgb(0, 0, 0);stroke-width:1.5px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
-<path d="M535 100 L535 115 L235 115 L235 128" fill="none" marker-end="url(#arrow)" style="fill:none;stroke:rgb(115, 114, 108);color:rgb(0, 0, 0);stroke-width:1.5px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
-<line x1="300" y1="158" x2="318" y2="158" marker-end="url(#arrow)" style="fill:none;stroke:rgb(115, 114, 108);color:rgb(0, 0, 0);stroke-width:1.5px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<rect x="232" y="315" width="175" height="54" rx="6" fill="rgb(240,240,238)" stroke="rgb(180,178,170)" stroke-width="0.5"/>
+<text x="319" y="337" text-anchor="middle" dominant-baseline="central" style="fill:rgb(61,61,58);font-family:'Anthropic Sans',-apple-system,sans-serif;font-size:11px;">협력사 포털 입력</text>
 
-<path d="M535 110 L630 110 L630 250 L235 250 L235 268" fill="none" stroke-dasharray="4 3" marker-end="url(#arrow)" style="fill:none;stroke:rgb(115, 114, 108);color:rgb(0, 0, 0);stroke-width:1.5px;stroke-dasharray:4px, 3px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
-<line x1="300" y1="298" x2="318" y2="298" marker-end="url(#arrow)" style="fill:none;stroke:rgb(115, 114, 108);color:rgb(0, 0, 0);stroke-width:1.5px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
-<line x1="450" y1="298" x2="468" y2="298" marker-end="url(#arrow)" style="fill:none;stroke:rgb(115, 114, 108);color:rgb(0, 0, 0);stroke-width:1.5px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
-<path d="M535 326 L535 358" fill="none" marker-end="url(#arrow)" style="fill:none;stroke:rgb(115, 114, 108);color:rgb(0, 0, 0);stroke-width:1.5px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
-<line x1="468" y1="388" x2="452" y2="388" marker-end="url(#arrow)" style="fill:none;stroke:rgb(115, 114, 108);color:rgb(0, 0, 0);stroke-width:1.5px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
-<path d="M320 388 L235 388 L235 340 L385 340 L385 200" fill="none" stroke-dasharray="4 3" marker-end="url(#arrow)" mask="url(#imagine-text-gaps-4dbjsk)" style="fill:none;stroke:rgb(115, 114, 108);color:rgb(0, 0, 0);stroke-width:1.5px;stroke-dasharray:4px, 3px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+<rect x="425" y="315" width="215" height="54" rx="6" fill="rgb(240,240,238)" stroke="rgb(180,178,170)" stroke-width="0.5"/>
+<text x="532" y="337" text-anchor="middle" dominant-baseline="central" style="fill:rgb(61,61,58);font-family:'Anthropic Sans',-apple-system,sans-serif;font-size:11px;">감사 기록 (위변조 방지 해시)</text>
 
-<text x="40" y="454" text-anchor="start" style="fill:rgb(61, 61, 58);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:12px;font-weight:400;text-anchor:start;dominant-baseline:auto">점선 = 메일 초대로 협력사 진입 · 제출 후 원청 맵 갱신</text>
-</svg>    </div>
-  </div>
-
-  <div class="card" style="margin-bottom:16px;">
-    <div class="card-label">검토 · DPP 발행 흐름</div>
-    <div style="margin-top:8px;overflow-x:auto;">
-<svg width="100%" viewBox="0 0 680 430" role="img" style="" xmlns="http://www.w3.org/2000/svg">
-<title style="fill:rgb(0, 0, 0);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto">검토·판정부터 DPP 발행·대외전송까지 화면 흐름</title>
-<desc style="fill:rgb(0, 0, 0);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto">HITL 보류 검토를 거쳐 원청이 DPP 발행 준비·확정·QR 생성 후 고객사로 전송하는 화면 단위 흐름</desc>
-<defs>
-<marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker>
-<mask id="imagine-text-gaps-sxm28r" maskUnits="userSpaceOnUse"><rect x="0" y="0" width="680" height="430" fill="white"/><rect x="64.953125" y="56" width="30.09375" height="19" fill="black" rx="2"/><rect x="52.5" y="276" width="55" height="19" fill="black" rx="2"/><rect x="181.046875" y="53" width="96.90625" height="22" fill="black" rx="2"/><rect x="190.0390625" y="72.5" width="79.921875" height="19" fill="black" rx="2"/><rect x="188" y="169" width="83" height="22" fill="black" rx="2"/><rect x="190.1875" y="188.5" width="79.625" height="19" fill="black" rx="2"/><rect x="321.3671875" y="169" width="96.265625" height="22" fill="black" rx="2"/><rect x="331.34375" y="188.5" width="76.3125" height="19" fill="black" rx="2"/><rect x="461.3203125" y="169" width="96.359375" height="22" fill="black" rx="2"/><rect x="472.234375" y="188.5" width="75.53125" height="19" fill="black" rx="2"/><rect x="462.640625" y="259" width="93.826904296875" height="22" fill="black" rx="2"/><rect x="476.9765625" y="278.5" width="66.046875" height="19" fill="black" rx="2"/><rect x="181.390625" y="309" width="96.33291625976562" height="22" fill="black" rx="2"/><rect x="206.1875" y="328.5" width="47.625" height="19" fill="black" rx="2"/><rect x="337.3515625" y="309" width="64.296875" height="22" fill="black" rx="2"/><rect x="330.0390625" y="328.5" width="79.921875" height="19" fill="black" rx="2"/><rect x="36" y="374" width="253.71875" height="19" fill="black" rx="2"/></mask></defs>
-
-<text x="80" y="70" text-anchor="middle" style="fill:rgb(61, 61, 58);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:12px;font-weight:400;text-anchor:middle;dominant-baseline:auto">원청</text>
-<text x="80" y="290" text-anchor="middle" style="fill:rgb(61, 61, 58);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:12px;font-weight:400;text-anchor:middle;dominant-baseline:auto">원청·감사</text>
-<line x1="150" y1="40" x2="150" y2="400" stroke="var(--t)" stroke-width="0.5" opacity="0.2" mask="url(#imagine-text-gaps-sxm28r)" style="fill:rgb(0, 0, 0);stroke:rgb(115, 114, 108);color:rgb(0, 0, 0);stroke-width:0.5px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.2;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
-
-<g style="fill:rgb(0, 0, 0);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto">
-<rect x="170" y="44" width="120" height="56" rx="8" stroke-width="0.5" style="fill:rgb(225, 245, 238);stroke:rgb(15, 110, 86);color:rgb(0, 0, 0);stroke-width:0.5px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
-<text x="230" y="64" text-anchor="middle" dominant-baseline="central" style="fill:rgb(8, 80, 65);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:14px;font-weight:500;text-anchor:middle;dominant-baseline:central">S-06 검토·승인</text>
-<text x="230" y="82" text-anchor="middle" dominant-baseline="central" style="fill:rgb(15, 110, 86);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:12px;font-weight:400;text-anchor:middle;dominant-baseline:central">승인·반려·보완</text>
-</g>
-
-<g style="fill:rgb(0, 0, 0);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto">
-<rect x="170" y="160" width="120" height="56" rx="8" stroke-width="0.5" style="fill:rgb(225, 245, 238);stroke:rgb(15, 110, 86);color:rgb(0, 0, 0);stroke-width:0.5px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
-<text x="230" y="180" text-anchor="middle" dominant-baseline="central" style="fill:rgb(8, 80, 65);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:14px;font-weight:500;text-anchor:middle;dominant-baseline:central">S-07 맵 관리</text>
-<text x="230" y="198" text-anchor="middle" dominant-baseline="central" style="fill:rgb(15, 110, 86);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:12px;font-weight:400;text-anchor:middle;dominant-baseline:central">만료·충족 점검</text>
-</g>
-<g style="fill:rgb(0, 0, 0);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto">
-<rect x="310" y="160" width="120" height="56" rx="8" stroke-width="0.5" style="fill:rgb(225, 245, 238);stroke:rgb(15, 110, 86);color:rgb(0, 0, 0);stroke-width:0.5px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
-<text x="370" y="180" text-anchor="middle" dominant-baseline="central" style="fill:rgb(8, 80, 65);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:14px;font-weight:500;text-anchor:middle;dominant-baseline:central">S-08 발행 준비</text>
-<text x="370" y="198" text-anchor="middle" dominant-baseline="central" style="fill:rgb(15, 110, 86);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:12px;font-weight:400;text-anchor:middle;dominant-baseline:central">8대 요소·규제</text>
-</g>
-<g style="fill:rgb(0, 0, 0);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto">
-<rect x="450" y="160" width="120" height="56" rx="8" stroke-width="0.5" style="fill:rgb(225, 245, 238);stroke:rgb(15, 110, 86);color:rgb(0, 0, 0);stroke-width:0.5px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
-<text x="510" y="180" text-anchor="middle" dominant-baseline="central" style="fill:rgb(8, 80, 65);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:14px;font-weight:500;text-anchor:middle;dominant-baseline:central">S-09 발행 확정</text>
-<text x="510" y="198" text-anchor="middle" dominant-baseline="central" style="fill:rgb(15, 110, 86);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:12px;font-weight:400;text-anchor:middle;dominant-baseline:central">불변·QR 생성</text>
-</g>
-<g style="fill:rgb(0, 0, 0);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto">
-<rect x="450" y="250" width="120" height="56" rx="8" stroke-width="0.5" style="fill:rgb(230, 241, 251);stroke:rgb(24, 95, 165);color:rgb(0, 0, 0);stroke-width:0.5px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
-<text x="510" y="270" text-anchor="middle" dominant-baseline="central" style="fill:rgb(12, 68, 124);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:14px;font-weight:500;text-anchor:middle;dominant-baseline:central">S-10 대외 전송</text>
-<text x="510" y="288" text-anchor="middle" dominant-baseline="central" style="fill:rgb(24, 95, 165);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:12px;font-weight:400;text-anchor:middle;dominant-baseline:central">엑셀·이메일</text>
-</g>
-
-<g style="fill:rgb(0, 0, 0);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto">
-<rect x="170" y="300" width="120" height="56" rx="8" stroke-width="0.5" style="fill:rgb(238, 237, 254);stroke:rgb(83, 74, 183);color:rgb(0, 0, 0);stroke-width:0.5px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
-<text x="230" y="320" text-anchor="middle" dominant-baseline="central" style="fill:rgb(60, 52, 137);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:14px;font-weight:500;text-anchor:middle;dominant-baseline:central">S-30 보류 목록</text>
-<text x="230" y="338" text-anchor="middle" dominant-baseline="central" style="fill:rgb(83, 74, 183);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:12px;font-weight:400;text-anchor:middle;dominant-baseline:central">HITL 큐</text>
-</g>
-<g style="fill:rgb(0, 0, 0);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto">
-<rect x="310" y="300" width="120" height="56" rx="8" stroke-width="0.5" style="fill:rgb(238, 237, 254);stroke:rgb(83, 74, 183);color:rgb(0, 0, 0);stroke-width:0.5px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
-<text x="370" y="320" text-anchor="middle" dominant-baseline="central" style="fill:rgb(60, 52, 137);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:14px;font-weight:500;text-anchor:middle;dominant-baseline:central">S-31 판정</text>
-<text x="370" y="338" text-anchor="middle" dominant-baseline="central" style="fill:rgb(83, 74, 183);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:12px;font-weight:400;text-anchor:middle;dominant-baseline:central">근거·승인·반려</text>
-</g>
-
-<path d="M230 100 L230 158" fill="none" marker-end="url(#arrow)" style="fill:none;stroke:rgb(115, 114, 108);color:rgb(0, 0, 0);stroke-width:1.5px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
-<path d="M230 100 L320 100 L320 298" fill="none" stroke-dasharray="4 3" marker-end="url(#arrow)" style="fill:none;stroke:rgb(115, 114, 108);color:rgb(0, 0, 0);stroke-width:1.5px;stroke-dasharray:4px, 3px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
-<line x1="290" y1="328" x2="308" y2="328" marker-end="url(#arrow)" style="fill:none;stroke:rgb(115, 114, 108);color:rgb(0, 0, 0);stroke-width:1.5px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
-<path d="M370 300 L370 240 L290 240 L290 188 L308 188" fill="none" stroke-dasharray="4 3" marker-end="url(#arrow)" style="fill:none;stroke:rgb(115, 114, 108);color:rgb(0, 0, 0);stroke-width:1.5px;stroke-dasharray:4px, 3px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
-
-<line x1="290" y1="188" x2="308" y2="188" marker-end="url(#arrow)" style="fill:none;stroke:rgb(115, 114, 108);color:rgb(0, 0, 0);stroke-width:1.5px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
-<line x1="430" y1="188" x2="448" y2="188" marker-end="url(#arrow)" style="fill:none;stroke:rgb(115, 114, 108);color:rgb(0, 0, 0);stroke-width:1.5px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
-<path d="M510 216 L510 248" fill="none" marker-end="url(#arrow)" style="fill:none;stroke:rgb(115, 114, 108);color:rgb(0, 0, 0);stroke-width:1.5px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
-
-<text x="40" y="388" text-anchor="start" style="fill:rgb(61, 61, 58);stroke:none;color:rgb(0, 0, 0);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:12px;font-weight:400;text-anchor:start;dominant-baseline:auto">점선 = 검토 보류로 분기 · 판정 후 발행 준비로 복귀</text>
-</svg>    </div>
-  </div>
 </svg></div>
+  </div>
+
+  <div class="card" style="margin-bottom:16px;">
+    <div class="card-label">핵심동선 — 페르소나별 단계 흐름</div>
+    <div style="margin-top:8px;overflow-x:auto;">
+<svg width="100%" viewBox="0 0 720 320" xmlns="http://www.w3.org/2000/svg">
+<defs>
+  <marker id="pa" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+    <path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </marker>
+</defs>
+
+<!-- 페르소나 레이블 열 -->
+<text x="20" y="100" text-anchor="start" style="fill:rgb(61,61,58);font-family:'Anthropic Sans',-apple-system,sans-serif;font-size:12px;">원청</text>
+<text x="20" y="190" text-anchor="start" style="fill:rgb(61,61,58);font-family:'Anthropic Sans',-apple-system,sans-serif;font-size:12px;">협력사</text>
+<text x="20" y="270" text-anchor="start" style="fill:rgb(61,61,58);font-family:'Anthropic Sans',-apple-system,sans-serif;font-size:12px;">AI 에이전트</text>
+
+<!-- 구분 세로선 -->
+<line x1="62" y1="30" x2="62" y2="300" stroke="rgb(150,150,140)" stroke-width="0.5" opacity="0.3"/>
+
+<!-- 제목 -->
+<text x="390" y="20" text-anchor="middle" style="fill:rgb(20,20,19);font-family:'Anthropic Sans',-apple-system,sans-serif;font-size:13px;font-weight:500;">핵심동선 화면 흐름</text>
+
+<!-- 가로 구분선 -->
+<line x1="62" y1="140" x2="710" y2="140" stroke="rgb(150,150,140)" stroke-width="0.5" opacity="0.25" stroke-dasharray="3 3"/>
+<line x1="62" y1="225" x2="710" y2="225" stroke="rgb(150,150,140)" stroke-width="0.5" opacity="0.25" stroke-dasharray="3 3"/>
+
+<!-- ── 원청 행 ── -->
+<!-- A. Pool 구축 -->
+<rect x="75" y="72" width="110" height="50" rx="7" fill="rgb(225,245,238)" stroke="rgb(15,110,86)" stroke-width="0.5"/>
+<text x="130" y="91" text-anchor="middle" dominant-baseline="central" style="fill:rgb(8,80,65);font-family:'Anthropic Sans',-apple-system,sans-serif;font-size:12px;font-weight:500;">A. Pool 구축</text>
+<text x="130" y="107" text-anchor="middle" dominant-baseline="central" style="fill:rgb(15,110,86);font-family:'Anthropic Sans',-apple-system,sans-serif;font-size:10px;">초대·맵핑·요청</text>
+
+<!-- B. 맵 전개 -->
+<rect x="210" y="72" width="110" height="50" rx="7" fill="rgb(225,245,238)" stroke="rgb(15,110,86)" stroke-width="0.5"/>
+<text x="265" y="91" text-anchor="middle" dominant-baseline="central" style="fill:rgb(8,80,65);font-family:'Anthropic Sans',-apple-system,sans-serif;font-size:12px;font-weight:500;">B. 맵 전개</text>
+<text x="265" y="107" text-anchor="middle" dominant-baseline="central" style="fill:rgb(15,110,86);font-family:'Anthropic Sans',-apple-system,sans-serif;font-size:10px;">트리·gap·요청</text>
+
+<!-- F. 검토 승인 -->
+<rect x="480" y="72" width="110" height="50" rx="7" fill="rgb(225,245,238)" stroke="rgb(15,110,86)" stroke-width="0.5"/>
+<text x="535" y="91" text-anchor="middle" dominant-baseline="central" style="fill:rgb(8,80,65);font-family:'Anthropic Sans',-apple-system,sans-serif;font-size:12px;font-weight:500;">F. 검토·승인</text>
+<text x="535" y="107" text-anchor="middle" dominant-baseline="central" style="fill:rgb(15,110,86);font-family:'Anthropic Sans',-apple-system,sans-serif;font-size:10px;">규제결과 확인</text>
+
+<!-- G. 대외 전송 -->
+<rect x="610" y="72" width="100" height="50" rx="7" fill="rgb(225,245,238)" stroke="rgb(15,110,86)" stroke-width="0.5"/>
+<text x="660" y="91" text-anchor="middle" dominant-baseline="central" style="fill:rgb(8,80,65);font-family:'Anthropic Sans',-apple-system,sans-serif;font-size:12px;font-weight:500;">G. 대외 전송</text>
+<text x="660" y="107" text-anchor="middle" dominant-baseline="central" style="fill:rgb(15,110,86);font-family:'Anthropic Sans',-apple-system,sans-serif;font-size:10px;">고객사 데이터</text>
+
+<!-- ── 협력사 행 ── -->
+<!-- C. 회원가입 -->
+<rect x="75" y="155" width="110" height="50" rx="7" fill="rgb(250,238,218)" stroke="rgb(133,79,11)" stroke-width="0.5"/>
+<text x="130" y="174" text-anchor="middle" dominant-baseline="central" style="fill:rgb(99,56,6);font-family:'Anthropic Sans',-apple-system,sans-serif;font-size:12px;font-weight:500;">C. 회원가입</text>
+<text x="130" y="190" text-anchor="middle" dominant-baseline="central" style="fill:rgb(133,79,11);font-family:'Anthropic Sans',-apple-system,sans-serif;font-size:10px;">초대→가입</text>
+
+<!-- D. 정보 입력 -->
+<rect x="210" y="155" width="110" height="50" rx="7" fill="rgb(250,238,218)" stroke="rgb(133,79,11)" stroke-width="0.5"/>
+<text x="265" y="174" text-anchor="middle" dominant-baseline="central" style="fill:rgb(99,56,6);font-family:'Anthropic Sans',-apple-system,sans-serif;font-size:12px;font-weight:500;">D. 정보 입력</text>
+<text x="265" y="190" text-anchor="middle" dominant-baseline="central" style="fill:rgb(133,79,11);font-family:'Anthropic Sans',-apple-system,sans-serif;font-size:10px;">표준양식·문서</text>
+
+<!-- ── AI 에이전트 행 ── -->
+<!-- E. AI 검증 -->
+<rect x="345" y="237" width="120" height="50" rx="7" fill="rgb(219,234,254)" stroke="rgb(30,86,160)" stroke-width="0.5"/>
+<text x="405" y="256" text-anchor="middle" dominant-baseline="central" style="fill:rgb(12,68,124);font-family:'Anthropic Sans',-apple-system,sans-serif;font-size:12px;font-weight:500;">E. AI 검증</text>
+<text x="405" y="272" text-anchor="middle" dominant-baseline="central" style="fill:rgb(30,86,160);font-family:'Anthropic Sans',-apple-system,sans-serif;font-size:10px;">4인 파이프라인</text>
+
+<!-- HITL 분기 -->
+<rect x="480" y="237" width="100" height="50" rx="7" fill="rgb(238,237,254)" stroke="rgb(83,74,183)" stroke-width="0.5"/>
+<text x="530" y="256" text-anchor="middle" dominant-baseline="central" style="fill:rgb(60,52,137);font-family:'Anthropic Sans',-apple-system,sans-serif;font-size:12px;font-weight:500;">HITL</text>
+<text x="530" y="272" text-anchor="middle" dominant-baseline="central" style="fill:rgb(83,74,183);font-family:'Anthropic Sans',-apple-system,sans-serif;font-size:10px;">저신뢰→사람</text>
+
+<!-- ── 화살표들 ── -->
+<!-- 원청 가로 흐름 -->
+<line x1="185" y1="97" x2="208" y2="97" stroke="rgb(15,110,86)" stroke-width="1" marker-end="url(#pa)" opacity="0.7"/>
+<!-- B→F (건너뜀 - 협력사 입력 후) -->
+<line x1="590" y1="97" x2="608" y2="97" stroke="rgb(15,110,86)" stroke-width="1" marker-end="url(#pa)" opacity="0.7"/>
+
+<!-- 협력사 가로 -->
+<line x1="185" y1="180" x2="208" y2="180" stroke="rgb(133,79,11)" stroke-width="1" marker-end="url(#pa)" opacity="0.7"/>
+
+<!-- 원청→협력사 (초대) -->
+<line x1="130" y1="122" x2="130" y2="153" stroke="rgb(100,100,100)" stroke-width="1" marker-end="url(#pa)" opacity="0.5" stroke-dasharray="3 2"/>
+
+<!-- 협력사 입력→AI 검증 -->
+<line x1="320" y1="180" x2="344" y2="250" stroke="rgb(100,100,100)" stroke-width="1" marker-end="url(#pa)" opacity="0.5"/>
+
+<!-- AI 검증→HITL -->
+<line x1="465" y1="262" x2="478" y2="262" stroke="rgb(83,74,183)" stroke-width="1" marker-end="url(#pa)" opacity="0.6" stroke-dasharray="3 2"/>
+<text x="471" y="255" text-anchor="middle" style="fill:rgb(83,74,183);font-family:'Anthropic Sans',-apple-system,sans-serif;font-size:9px;">0.85↓</text>
+
+<!-- AI 검증→원청 검토 -->
+<line x1="405" y1="237" x2="500" y2="124" stroke="rgb(30,86,160)" stroke-width="1" marker-end="url(#pa)" opacity="0.5"/>
+
+<!-- 범례 -->
+<text x="75" y="308" style="fill:rgb(100,100,95);font-family:'Anthropic Sans',-apple-system,sans-serif;font-size:10px;">실선 = 정상 흐름 · 점선 = 위임/분기 · 보라 점선 = HITL(저신뢰) 분기</text>
+</svg>
+    </div>
   </div>
 </div>
 
@@ -2002,6 +1915,250 @@ ul.tight li b { color:var(--text); font-weight:500; }
       <span class="tag tag-blue">공급망 맵 생성</span>
       <span class="tag tag-blue">DPP AI 에이전트</span>
       <span class="tag tag-blue">데모</span>
+    </div>
+  </div>
+</div>
+
+
+<!-- W7 -->
+<div class="page" id="page-w7">
+  <h1 class="page-title">W7 - 배선 AI 강화 데모 정제</h1>
+  <p class="page-sub"><span class="status-badge status-wip">● 진행 중</span>&nbsp;&nbsp;<span style="font-size:12px;color:var(--text-muted);">6/29(월) – 7/5(일)</span></p>
+
+  <!-- 주간 구조 -->
+  <div class="card" style="margin-bottom:12px;">
+    <div class="card-label">주간 일정 구조</div>
+    <div class="summary-text">
+      <b>메인 목표 :</b> 프론트·백엔드 배선 완결 + AI 기능 강화 + 데모 시나리오 정제.<br>
+      월~목(6/29~7/3) 담당별 집중 구현. 금(7/4) 멘토 세션 + 주석 정리 + 기능 확인.
+    </div>
+  </div>
+
+  <!-- W7 핵심 -->
+  <div class="card" style="margin-bottom:12px; border-left:3px solid var(--blue);">
+    <div class="card-label" style="color:var(--blue);">W7 핵심 3축</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-top:4px;">
+      <div style="background:var(--bg);border-radius:6px;padding:10px;border-left:2px solid var(--green);">
+        <div style="font-size:11px;font-weight:600;color:var(--green);margin-bottom:5px;">① AI 기능 강화 (지혜·은지)</div>
+        <div style="font-size:12px;color:var(--text-muted);line-height:1.7;">data_gateway 노드 지혜 이관<br>Data Gateway 노드 강화<br>RAG 판정 품질 개선<br>규제 임베딩 정밀화</div>
+      </div>
+      <div style="background:var(--bg);border-radius:6px;padding:10px;border-left:2px solid var(--blue);">
+        <div style="font-size:11px;font-weight:600;color:var(--blue);margin-bottom:5px;">② 프론트·백엔드 배선 (영수·차윤)</div>
+        <div style="font-size:12px;color:var(--text-muted);line-height:1.7;">🔌 배선 필요 구간 처리<br>🆕 신설 엔드포인트 연결<br>mock → 실데이터 교체<br>멀티 도메인 페이지 정합</div>
+      </div>
+      <div style="background:var(--bg);border-radius:6px;padding:10px;border-left:2px solid var(--amber);">
+        <div style="font-size:11px;font-weight:600;color:var(--amber);margin-bottom:5px;">③ 데모 준비·기능 강화 (은진)</div>
+        <div style="font-size:12px;color:var(--text-muted);line-height:1.7;">프론트 실기능 대조<br>배선 + 신규 기능 구현<br>데모 시나리오 검증<br>금: 멘토 세션·주석 정리</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 선행 컨텍스트 -->
+  <div class="card" style="margin-bottom:12px;">
+    <div class="card-label">W7 선행 컨텍스트 (W6 변경 내역 기반)</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
+      <div>
+        <div style="font-size:11px;font-weight:600;color:var(--text);margin-bottom:5px;">백엔드 주요 변경 (40ad213→HEAD)</div>
+        <div style="font-size:11px;color:var(--text-muted);line-height:1.8;">
+          · DPP 도메인 전면 제거 → <code class="k">data_consent</code> 신설<br>
+          · <code class="k">supply_chain_maps</code> 헤더 도입, 엣지 PK <code class="k">map_id→edge_id</code><br>
+          · supplier 마스터폼 대폭 확장 (smelter·core_minerals·doc_url 3종)<br>
+          · <code class="k">files</code> 도메인 context별 조회 추가<br>
+          · alembic 제거 → <code class="k">01_schema.sql</code> 직접 관리<br>
+          · agents 데드락 수정, <code class="k">users.supplier_id</code> 매핑
+        </div>
+      </div>
+      <div>
+        <div style="font-size:11px;font-weight:600;color:var(--text);margin-bottom:5px;">프론트 주요 변경 (d646947→HEAD, 219커밋)</div>
+        <div style="font-size:11px;color:var(--text-muted);line-height:1.8;">
+          · 공급망 맵 5-STEP 워크스페이스 재설계<br>
+          · 협력사 표준 양식 공유 (<code class="k">SupplierGeneralReview</code>)<br>
+          · DPP Center·실사관리 페이지 제거<br>
+          · HITL 협력사 승인 자기완결 모듈화<br>
+          · My Task 업무 분장 허브 재편<br>
+          · 로그인(<code class="k">/auth/login</code>) 실 연동, <code class="k">lib/api.ts</code> 정합
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- A+C 지혜·은지 AI 강화 -->
+  <div class="card" style="margin-bottom:12px;">
+    <div style="border:0.5px solid var(--border);border-radius:8px;overflow:hidden;">
+      <div style="background:var(--bg);padding:8px 12px;display:flex;align-items:center;gap:10px;border-bottom:0.5px solid var(--border);">
+        <span style="font-size:13px;font-weight:700;color:var(--text);">A·C · 지혜 &amp; 은지 — AI 기능 강화 (주간 전체)</span>
+        <span style="margin-left:auto;font-size:11px;background:var(--green-bg);color:var(--green);padding:1px 7px;border-radius:3px;">이번 주 내내</span>
+      </div>
+      <table style="width:100%;border-collapse:collapse;font-size:12px;">
+        <tbody>
+          <tr style="border-bottom:0.5px solid var(--border);background:var(--bg);">
+            <td style="padding:6px 12px;width:18%;font-weight:600;color:var(--text);">data_gateway 이관</td>
+            <td style="padding:6px 12px;width:8%;"><span style="background:var(--color-background-danger);color:var(--color-text-danger);font-size:11px;padding:1px 5px;border-radius:3px;">선행</span></td>
+            <td style="padding:6px 12px;color:var(--text-muted);">은진→지혜로 <code class="k">data_gateway</code> 노드 이관 완료. 지혜가 소유권 갖고 강화 작업 진행</td>
+          </tr>
+          <tr style="border-bottom:0.5px solid var(--border);">
+            <td style="padding:6px 12px;font-weight:600;color:var(--text);">Data Gateway 강화</td>
+            <td style="padding:6px 12px;"><span style="background:var(--color-background-info);color:var(--color-text-info);font-size:11px;padding:1px 5px;border-radius:3px;">지혜</span></td>
+            <td style="padding:6px 12px;color:var(--text-muted);">문서 추출 정확도 개선, supplier 마스터폼 필드와 data_gateway 입력 스키마 정합, 저신뢰 필드 분기 고도화</td>
+          </tr>
+          <tr style="border-bottom:0.5px solid var(--border);background:var(--bg);">
+            <td style="padding:6px 12px;font-weight:600;color:var(--text);">RAG 판정 강화</td>
+            <td style="padding:6px 12px;"><span style="background:var(--color-background-info);color:var(--color-text-info);font-size:11px;padding:1px 5px;border-radius:3px;">은지</span></td>
+            <td style="padding:6px 12px;color:var(--text-muted);">규제 임베딩 정밀화, <code class="k">cited_clauses</code>·<code class="k">reasoning_text</code> 품질 개선 (W6에서 반환 구조 완성됨), 검색 relevance 향상</td>
+          </tr>
+          <tr>
+            <td style="padding:6px 12px;font-weight:600;color:var(--text);">regulation 결과 정합</td>
+            <td style="padding:6px 12px;"><span style="background:var(--color-background-info);color:var(--color-text-info);font-size:11px;padding:1px 5px;border-radius:3px;">은지</span></td>
+            <td style="padding:6px 12px;color:var(--text-muted);">FEOC 예시 → EU 배터리 탄소발자국 위반으로 변경된 시드 기반, 검증 신뢰도 <code class="k">compliance_results</code> 기준 정합, material→제품명 조인 확인</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- D+E 영수·차윤 배선 -->
+  <div class="card" style="margin-bottom:12px;">
+    <div style="border:0.5px solid var(--border);border-radius:8px;overflow:hidden;">
+      <div style="background:var(--bg);padding:8px 12px;display:flex;align-items:center;gap:10px;border-bottom:0.5px solid var(--border);">
+        <span style="font-size:13px;font-weight:700;color:var(--text);">D·E · 영수 &amp; 차윤 — 프론트·백엔드 배선</span>
+        <span style="font-size:11px;color:var(--text-faint);">🔌 배선 필요 · 🆕 신설 · 🌱 데이터 시드</span>
+        <span style="margin-left:auto;font-size:11px;background:var(--color-background-info);color:var(--color-text-info);padding:1px 7px;border-radius:3px;">BACKEND_INTEGRATION_NEEDED 기준</span>
+      </div>
+      <table style="width:100%;border-collapse:collapse;font-size:12px;">
+        <thead>
+          <tr style="border-bottom:1.5px solid var(--border);">
+            <th style="text-align:left;padding:5px 12px;color:var(--text-faint);font-weight:500;width:14%">구간</th>
+            <th style="text-align:left;padding:5px 12px;color:var(--text-faint);font-weight:500;width:8%">담당</th>
+            <th style="text-align:left;padding:5px 12px;color:var(--text-faint);font-weight:500;width:8%">상태</th>
+            <th style="text-align:left;padding:5px 12px;color:var(--text-faint);font-weight:500;">작업</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom:0.5px solid var(--border);background:var(--bg);">
+            <td style="padding:5px 12px;font-weight:600;color:var(--text);">협력사 목록 연락처</td>
+            <td style="padding:5px 12px;color:var(--text-muted);">차윤</td>
+            <td style="padding:5px 12px;"><span style="color:var(--blue);font-size:12px;">🔌</span></td>
+            <td style="padding:5px 12px;color:var(--text-muted);"><code class="k">getSupplierContacts</code> 배선 — <code class="k">suppliers/page.tsx:181</code> "미등록" stale 주석 제거. 엔드포인트 실존</td>
+          </tr>
+          <tr style="border-bottom:0.5px solid var(--border);">
+            <td style="padding:5px 12px;font-weight:600;color:var(--text);">협력사 포털 연락처·사업자</td>
+            <td style="padding:5px 12px;color:var(--text-muted);">차윤</td>
+            <td style="padding:5px 12px;"><span style="color:var(--blue);font-size:12px;">🔌</span></td>
+            <td style="padding:5px 12px;color:var(--text-muted);"><code class="k">SupplierInfoPage.tsx:196</code> — contacts·사업자정보·제조공정 빈값 → <code class="k">/{id}/detail</code> 배선</td>
+          </tr>
+          <tr style="border-bottom:0.5px solid var(--border);background:var(--bg);">
+            <td style="padding:5px 12px;font-weight:600;color:var(--text);">check-info hop_level(차수)</td>
+            <td style="padding:5px 12px;color:var(--text-muted);">차윤</td>
+            <td style="padding:5px 12px;"><span style="color:var(--blue);font-size:12px;">🔌</span></td>
+            <td style="padding:5px 12px;color:var(--text-muted);"><code class="k">check-info:674</code> tier "—" → supplychain <code class="k">hop_level</code> 배선 (0~5차 시드됨)</td>
+          </tr>
+          <tr style="border-bottom:0.5px solid var(--border);">
+            <td style="padding:5px 12px;font-weight:600;color:var(--text);">8단계 제출 트래커</td>
+            <td style="padding:5px 12px;color:var(--text-muted);">차윤</td>
+            <td style="padding:5px 12px;"><span style="color:var(--blue);font-size:12px;">🔌</span></td>
+            <td style="padding:5px 12px;color:var(--text-muted);"><code class="k">EightStageStepper.tsx:108</code> <code class="k">MOCK_BATCH_STATUS</code> → <code class="k">GET /batches/{id}</code> 교체. <code class="k">mockSubmissions</code> → <code class="k">GET /submissions</code></td>
+          </tr>
+          <tr style="border-bottom:0.5px solid var(--border);background:var(--bg);">
+            <td style="padding:5px 12px;font-weight:600;color:var(--text);">My Task 업무큐</td>
+            <td style="padding:5px 12px;color:var(--text-muted);">차윤</td>
+            <td style="padding:5px 12px;"><span style="color:var(--blue);font-size:12px;">🔌</span></td>
+            <td style="padding:5px 12px;color:var(--text-muted);"><code class="k">my-task/page.tsx</code> <code class="k">_MOCK_TASKS</code> → <code class="k">getActions</code>(<code class="k">/actions/mine</code>) 배선. 현재 탭 미렌더 잔존 상수 제거</td>
+          </tr>
+          <tr style="border-bottom:0.5px solid var(--border);">
+            <td style="padding:5px 12px;font-weight:600;color:var(--text);">공급망 맵 실데이터</td>
+            <td style="padding:5px 12px;color:var(--text-muted);">영수</td>
+            <td style="padding:5px 12px;"><span style="color:var(--blue);font-size:12px;">🔌</span></td>
+            <td style="padding:5px 12px;color:var(--text-muted);"><code class="k">SupplyChainHub.tsx</code> <code class="k">mockDataset</code> → <code class="k">/{product_id}/supply-chain-map</code> 실데이터. <code class="k">edge_id</code> 개명 정합, <code class="k">hop_level</code> 차수 표시</td>
+          </tr>
+          <tr style="border-bottom:0.5px solid var(--border);background:var(--bg);">
+            <td style="padding:5px 12px;font-weight:600;color:var(--text);">완료 증빙 다운로드</td>
+            <td style="padding:5px 12px;color:var(--text-muted);">영수</td>
+            <td style="padding:5px 12px;"><span style="color:var(--blue);font-size:12px;">🔌</span></td>
+            <td style="padding:5px 12px;color:var(--text-muted);"><code class="k">EightStageStepper.tsx:397</code> alert → <code class="k">POST /audit-packages/{id}/export</code> 배선</td>
+          </tr>
+          <tr style="border-bottom:0.5px solid var(--border);">
+            <td style="padding:5px 12px;font-weight:600;color:var(--text);">자가신고 현재 공급원</td>
+            <td style="padding:5px 12px;color:var(--text-muted);">영수</td>
+            <td style="padding:5px 12px;"><span style="color:var(--color-text-danger);font-size:12px;">🆕</span></td>
+            <td style="padding:5px 12px;color:var(--text-muted);"><code class="k">SelfReportModal.tsx:44</code> <code class="k">MOCK_CURRENT_SUPPLIER</code> — GET 없음. supplychain에 <code class="k">GET /current-supply-source</code> 신설 또는 <code class="k">supplied-items</code> 활용</td>
+          </tr>
+          <tr style="border-bottom:0.5px solid var(--border);background:var(--bg);">
+            <td style="padding:5px 12px;font-weight:600;color:var(--text);">협력사 알림 벨</td>
+            <td style="padding:5px 12px;color:var(--text-muted);">영수</td>
+            <td style="padding:5px 12px;"><span style="color:var(--color-text-danger);font-size:12px;">🆕</span></td>
+            <td style="padding:5px 12px;color:var(--text-muted);"><code class="k">SupplierNotificationBell.tsx:29</code> <code class="k">MOCK_NOTIFICATIONS</code> — notifications 도메인 신설 또는 <code class="k">GET /notifications</code> users/audit에 추가</td>
+          </tr>
+          <tr>
+            <td style="padding:5px 12px;font-weight:600;color:var(--text);">PO 목록</td>
+            <td style="padding:5px 12px;color:var(--text-muted);">영수</td>
+            <td style="padding:5px 12px;"><span style="color:var(--color-text-danger);font-size:12px;">🆕</span></td>
+            <td style="padding:5px 12px;color:var(--text-muted);"><code class="k">StepContext.tsx:19</code> <code class="k">MOCK_POS</code> — "백엔드 PO 엔드포인트 없어 mock" 주석. purchase-order 엔드포인트 신설 필요</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- B 은진 데모 준비 -->
+  <div class="card" style="margin-bottom:12px;">
+    <div style="border:0.5px solid var(--border);border-radius:8px;overflow:hidden;">
+      <div style="background:var(--bg);padding:8px 12px;display:flex;align-items:center;gap:10px;border-bottom:0.5px solid var(--border);">
+        <span style="font-size:13px;font-weight:700;color:var(--text);">B · 은진 — 프론트 실기능 대조·데모 준비·기능 구현</span>
+        <span style="margin-left:auto;font-size:11px;background:var(--amber-bg);color:var(--amber);padding:1px 7px;border-radius:3px;">배선 + 기능 구현 병행</span>
+      </div>
+      <table style="width:100%;border-collapse:collapse;font-size:12px;">
+        <tbody>
+          <tr style="border-bottom:0.5px solid var(--border);background:var(--bg);">
+            <td style="padding:6px 12px;width:22%;font-weight:600;color:var(--text);">프론트 실기능 전수 대조</td>
+            <td style="padding:6px 12px;color:var(--text-muted);">W6 변경 내역(219커밋) 기준 프론트 실기능 vs 백엔드 응답 1:1 대조. 불일치 구간 리스트업 → 배선 또는 구현 분류</td>
+          </tr>
+          <tr style="border-bottom:0.5px solid var(--border);">
+            <td style="padding:6px 12px;font-weight:600;color:var(--text);">공급망 5-STEP 검증</td>
+            <td style="padding:6px 12px;color:var(--text-muted);">STEP1~5 단계 게이팅 실데이터 흐름 확인. <code class="k">supply_chain_maps</code> 헤더·<code class="k">edge_id</code> 변경 정합. 데이터 계약 동의서 UI 연동</td>
+          </tr>
+          <tr style="border-bottom:0.5px solid var(--border);background:var(--bg);">
+            <td style="padding:6px 12px;font-weight:600;color:var(--text);">데모 3종 시나리오 검증</td>
+            <td style="padding:6px 12px;color:var(--text-muted);">Happy(한양셀 DPP 발행) · Sad(신장 UFLPA 차단) · Gray(대성 저신뢰 HITL) — 전 경로 end-to-end 통과 확인. 막히는 구간 표시 → 즉시 수정 or PM 보고</td>
+          </tr>
+          <tr style="border-bottom:0.5px solid var(--border);">
+            <td style="padding:6px 12px;font-weight:600;color:var(--text);">추가 기능 구현</td>
+            <td style="padding:6px 12px;color:var(--text-muted);">대조 결과에서 누락 발견 시 즉시 구현. BOM <code class="k">functionPurpose</code> UI 표시(노드 상세 드로어) · supplier <code class="k">providerType=smelter</code> UI 반영 등</td>
+          </tr>
+          <tr>
+            <td style="padding:6px 12px;font-weight:600;color:var(--text);">금(7/4) 멘토 세션 준비</td>
+            <td style="padding:6px 12px;color:var(--text-muted);">주석 정리(stale mock 주석 제거, <code class="k">[REVERT-NON-SUPPLIER]</code> 마커 일괄 처리) · 기능 확인 체크리스트 작성 · 멘토 세션 발표 자료</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- 금요일 -->
+  <div class="card" style="margin-bottom:12px;">
+    <div class="card-label">금(7/4) — 멘토 세션 + 주석 정리 + 기능 확인</div>
+    <div class="summary-text">전원 참여. 주간 구현 결과 멘토 검토. <code class="k">[REVERT-NON-SUPPLIER]</code> 마커 일괄 처리·stale mock 주석 제거 등 코드 정리. 3종 데모 시나리오 최종 기능 확인.</div>
+    <div style="display:flex;flex-wrap:wrap;gap:4px;margin-top:8px;">
+      <span class="tag tag-blue">멘토 세션</span>
+      <span class="tag tag-blue">주석 정리</span>
+      <span class="tag tag-blue">데모 최종 확인</span>
+    </div>
+  </div>
+
+  <!-- 완료 기준 -->
+  <div class="card">
+    <div class="card-label">W7 완료 기준</div>
+    <div class="summary-text">
+      <b>A·C(지혜·은지)</b> data_gateway 강화 완료 · RAG cited_clauses 품질 개선 · 검증 신뢰도 정합<br>
+      <b>D·E(영수·차윤)</b> 🔌 배선 구간 전부 실데이터 연결 · 🆕 신설 3종(알림·PO·공급원) 처리 방향 확정<br>
+      <b>B(은진)</b> 프론트 실기능 전수 대조 완료 · 데모 3종 end-to-end 통과 · 금 멘토 세션
+    </div>
+    <div style="margin-top:8px;display:flex;flex-wrap:wrap;gap:4px;">
+      <span class="tag tag-blue">data_gateway 강화</span>
+      <span class="tag tag-blue">RAG 정밀화</span>
+      <span class="tag tag-blue">배선 완결</span>
+      <span class="tag tag-blue">mock 제거</span>
+      <span class="tag tag-blue">데모 3종 통과</span>
+      <span class="tag tag-blue">멘토 세션</span>
     </div>
   </div>
 </div>
